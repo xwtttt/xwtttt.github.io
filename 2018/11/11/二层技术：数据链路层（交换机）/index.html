@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>二层技术：数据链路层（交换机） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CCIE学习笔记（2）">
+<meta name="keywords" content="CCIE相关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二层技术：数据链路层（交换机）">
+<meta property="og:url" content="http://yoursite.com/2018/11/11/二层技术：数据链路层（交换机）/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CCIE学习笔记（2）">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/mac地址表.png">
+<meta property="og:image" content="http://yoursite.com/img/CCIE/vlan_brief.png">
+<meta property="og:image" content="http://yoursite.com/img/CCIE/trunk链路.png">
+<meta property="og:image" content="http://yoursite.com/img/CCIE/ISL.png">
+<meta property="og:image" content="http://yoursite.com/img/CCIE/查看trunk干道.png">
+<meta property="og:image" content="http://yoursite.com/img/CCIE/单臂路由.png">
+<meta property="og:image" content="http://yoursite.com/img/CCIE/VTP同步1.png">
+<meta property="og:image" content="http://yoursite.com/img/CCIE/VTP同步2.png">
+<meta property="og:updated_time" content="2018-11-14T04:32:04.457Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="二层技术：数据链路层（交换机）">
+<meta name="twitter:description" content="CCIE学习笔记（2）">
+<meta name="twitter:image" content="http://yoursite.com/img/mac地址表.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-二层技术：数据链路层（交换机）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/11/二层技术：数据链路层（交换机）/" class="article-date">
+  <time datetime="2018-11-11T08:43:23.000Z" itemprop="datePublished">2018-11-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      二层技术：数据链路层（交换机）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>CCIE学习笔记（2）</strong></p>
+<a id="more"></a>
+<h1 id="二层技术：数据链路层（交换机）"><a href="#二层技术：数据链路层（交换机）" class="headerlink" title="二层技术：数据链路层（交换机）"></a>二层技术：数据链路层（交换机）</h1><h2 id="交换机功能"><a href="#交换机功能" class="headerlink" title="交换机功能"></a>交换机功能</h2><h3 id="（1）mac地址学习"><a href="#（1）mac地址学习" class="headerlink" title="（1）mac地址学习"></a>（1）mac地址学习</h3><p>原理：交换机转发数据帧的依据是mac地址转发表（相当于路由器中的路由表routing-table）mac-address-table。</p>
+<p>过程：</p>
+<ol>
+<li>默认交换机mac地址表为空（null）</li>
+<li>当设备开始发送数据帧，交换机会将设备的MAC地址与交换机的本地接口进行映射，形成mac地址转发表。</li>
+</ol>
+<p>查看mac地址转发表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Show mac-address-table     //交换机特权模式下查看mac地址转发表</span><br><span class="line">Mac address-table aging-time + 时间/s    //修改老化时间</span><br><span class="line">Clear mac-address-table     //清理mac地址转发表</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/mac地址表.png" alt="mac地址表"></p>
+<h3 id="（2）-数据帧的转发和过滤"><a href="#（2）-数据帧的转发和过滤" class="headerlink" title="（2） 数据帧的转发和过滤"></a>（2） 数据帧的转发和过滤</h3><h3 id="（3）二层网络防环"><a href="#（3）二层网络防环" class="headerlink" title="（3）二层网络防环"></a>（3）二层网络防环</h3><p>产生环路的原因：为了备份链路</p>
+<p>环路引起的问题：</p>
+<ol>
+<li>数据帧重复</li>
+<li>mac地址表不稳定</li>
+<li>广播风暴（二层网络最严重的问题）<br> 广播风暴产生的原因：<ul>
+<li>未知单播泛洪（unknown unicast flooding）</li>
+<li>组播数据帧（multicast）</li>
+<li>广播数据帧</li>
+</ul>
+</li>
+</ol>
+<p>防环机制：生成树spanning-tree protocol（STP）</p>
+<p>原理：将环路中某些接口进行逻辑上的阻塞blocking，形成断开环路的效果，当有效链路发生物理上的down，那么blocking接口会进入forwarding转发状态（需要50s）。</p>
+<p>##VLAN（Virtual Local Area Network）：虚拟局域网<br>作用：将交换机上的网络进行逻辑上的分段（一个VLAN = 一个广播域 = 一个网段）</p>
+<p>优点：分段，灵活，安全</p>
+<p>VLAN范围：<code>0-4095</code></p>
+<ul>
+<li><code>0、4095</code>：系统保留</li>
+<li><code>2-1001</code>：以太网常用VLAN</li>
+<li><code>1002-1005</code>：令牌环网和FDDI</li>
+<li><code>1024-4094</code>：扩展VLAN，只能用于三层以上交换机使用，思科设备的VTP模式为透明模式</li>
+</ul>
+<p>VLAN配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">//全局模式下</span><br><span class="line">valn 10   //创建vlan，vlan-ID为10</span><br><span class="line">name  TECH  //命名vlan，名字TECH。（可选）</span><br><span class="line">vlan  20</span><br><span class="line">name  SALE</span><br><span class="line">Vlan  30</span><br><span class="line">Name  HR</span><br><span class="line">Vlan  40</span><br><span class="line">Name  COMM</span><br><span class="line">...... </span><br><span class="line">//接口划入vlan：全局模式下</span><br><span class="line"></span><br><span class="line">Int  f0/1</span><br><span class="line">Switchport  mode  access    //设置交换机接口模式为接入模式</span><br><span class="line">Switchport  access  vlan  10  //接口接入vlan 10</span><br><span class="line"></span><br><span class="line">Int  f0/2</span><br><span class="line">Sw  mo  ac</span><br><span class="line">Sw  ac  vlan  20</span><br><span class="line"></span><br><span class="line">Int  f0/3</span><br><span class="line">Sw  mo  ac</span><br><span class="line">Sw  ac  vlan  30</span><br><span class="line"></span><br><span class="line">Int  f0/4</span><br><span class="line">Sw  mo  ac</span><br><span class="line">Sw  ac  vlan  40</span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">//查看vlan信息：</span><br><span class="line">show vlan brief</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/CCIE/vlan_brief.png" alt="vlan_brief"></p>
+<h2 id="干道：trunk"><a href="#干道：trunk" class="headerlink" title="干道：trunk"></a>干道：trunk</h2><p>作用：用于封装交换机之间的链路，用于不同vlan数据帧打标记。<br><img src="/img/CCIE/trunk链路.png" alt></p>
+<p><strong>Trunk打标记协议</strong>：<code>IEEE802.1q</code>和<code>ISL</code></p>
+<ol>
+<li><strong>IEEE802.1q</strong>：共有标准，支持不同的厂商之间交换vlan信息，也称为dot1q，共有4个字节，数据帧格式如下表：<br>| 2字节      | 3位         | 1位      | 12位         |<br>| ———- | ———– | ——– | ———— |<br>| 以太网类型 | 优先级位0-7 | 令牌环位 | VLAN-ID 4069 |</li>
+<li><strong>ISL</strong>：思科私有标准，共有30个字节，前26字节，后4字节，中间只有10位可用于VLAN-ID的标记（2^10=1024）。<br> <img src="/img/CCIE/ISL.png" alt="Alt text"></li>
+</ol>
+<p><strong>Trunk配置</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Int  range  f0/5 - 6  ///同时进入f0/5和f0/6</span><br><span class="line">Switchport  trunk  encapsulation  dot1q  ///交换机干道封装选择dot1q(IEEE 802.1q)，在二层交换机无法配置</span><br><span class="line">Switchport  mode  trunk ///交换机接口模式为trunk模式（on模式），二层交换机只配一条</span><br><span class="line">//简写：</span><br><span class="line">Int  ran  f0/5 - 6</span><br><span class="line">Sw  tr  en  do </span><br><span class="line">Sw  mo  tr</span><br></pre></td></tr></table></figure></p>
+<p><strong>Trunk干道</strong>：接口一旦成为Trunk干道之后，将不再属于任何vlan。当查看<code>show  vlan  brief</code>时，无法看到<strong>Trunk</strong>接口。</p>
+<p><strong>查看Trunk干道</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Show  int  trunk</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/CCIE/查看trunk干道.png" alt="Alt text"></p>
+<h2 id="VLAN间通信：单臂路由"><a href="#VLAN间通信：单臂路由" class="headerlink" title="VLAN间通信：单臂路由"></a>VLAN间通信：单臂路由</h2><p><img src="/img/CCIE/单臂路由.png" alt="Alt text"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//交换机上的配置：</span><br><span class="line">Int  f0/7   //连接路由器的接口</span><br><span class="line">Sw  mo  tr   //封装trunk，打标记</span><br><span class="line"></span><br><span class="line">//路由器上配置：</span><br><span class="line">Int  f0/0  //进入母接口</span><br><span class="line">no  sh   //打开接口</span><br><span class="line">Int  f0/0.1  //创建f0/0的子接口，子接口号为f0/0.1</span><br><span class="line">encapsulation  dot1q  10  //封装标记10，用于识别vlan 10的数据</span><br><span class="line">Ip  add  192.168.10.254  255.255.255.0  //配置vlan 10网关</span><br><span class="line">Int  f0/0.2</span><br><span class="line">en  do  20</span><br><span class="line">Ip  add  192.168.20.254  255.255.255.0  </span><br><span class="line">Int  f0/0.3</span><br><span class="line">en  do  30</span><br><span class="line">Ip  add  192.168.30.254  255.255.255.0</span><br><span class="line">Int  f0/0.4</span><br><span class="line">en  do  40</span><br><span class="line">Ip  add  192.168.40.254  255.255.255.0</span><br></pre></td></tr></table></figure></p>
+<h2 id="VTP：vlan-trunk-protocol"><a href="#VTP：vlan-trunk-protocol" class="headerlink" title="VTP：vlan  trunk  protocol"></a>VTP：vlan  trunk  protocol</h2><p><strong>作用</strong>：通过交换机之间的trunk干道进行不同交换机之间vlan信息的传递，简化交换机vlan的配置量。</p>
+<p><strong>VTP配置</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//VTP服务器端配置：</span><br><span class="line">vtp  domain  CCIE  //创建vtp同步域，域名为CCIE，必须相同</span><br><span class="line">vtp  mode  server  //设置为服务器模式</span><br><span class="line">vtp  version  2    //激活vtpv2，只在服务器模式设备配置</span><br><span class="line">vtp  password  cisco  //设置vtp的密码，注意空格（可选）</span><br><span class="line"></span><br><span class="line">//VTP客户端配置：</span><br><span class="line">vtp  domain  CCIE</span><br><span class="line">vtp  mode  client</span><br><span class="line">vtp  password  cisco</span><br></pre></td></tr></table></figure></p>
+<p><strong>查看vtp同步</strong>：<code>client</code>端<br><img src="/img/CCIE/VTP同步1.png" alt="Alt text"><br><img src="/img/CCIE/VTP同步2.png" alt="Alt text"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/11/二层技术：数据链路层（交换机）/" data-id="cjvw4sk740004ukviukr1kytp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CCIE相关/">CCIE相关</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/30/OSI七层网络协议/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">OSI七层网路协议和路由器的使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCIE相关/">CCIE相关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo相关/">Hexo相关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CCIE相关/" style="font-size: 20px;">CCIE相关</a> <a href="/tags/Hexo相关/" style="font-size: 10px;">Hexo相关</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/11/二层技术：数据链路层（交换机）/">二层技术：数据链路层（交换机）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/30/OSI七层网络协议/">OSI七层网路协议和路由器的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/31/python学习笔记（1）：列表、元组和字典/">Python学习笔记：列表、元组、字典和集合</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/19/markdow使用小结/">Markdown使用小结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 xwtttt<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

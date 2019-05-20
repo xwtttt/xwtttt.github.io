@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>OSI七层网路协议和路由器的使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CCIE学习笔记（1）">
+<meta name="keywords" content="CCIE相关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OSI七层网路协议和路由器的使用">
+<meta property="og:url" content="http://yoursite.com/2018/10/30/OSI七层网络协议/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CCIE学习笔记（1）">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-14T04:32:38.367Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OSI七层网路协议和路由器的使用">
+<meta name="twitter:description" content="CCIE学习笔记（1）">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-OSI七层网络协议" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/30/OSI七层网络协议/" class="article-date">
+  <time datetime="2018-10-30T05:00:00.000Z" itemprop="datePublished">2018-10-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      OSI七层网路协议和路由器的使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>CCIE学习笔记（1）</strong></p>
+<a id="more"></a>
+<h1 id="OSI七层网络协议"><a href="#OSI七层网络协议" class="headerlink" title="OSI七层网络协议"></a>OSI七层网络协议</h1><table>
+<thead>
+<tr>
+<th>os层次</th>
+<th style="text-align:left">作用</th>
+<th>协议</th>
+<th>设备</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层</td>
+<td style="text-align:left">为用户提供应用端口</td>
+<td>http、https、ftp、DNS</td>
+<td></td>
+<td>message</td>
+</tr>
+<tr>
+<td>表示层</td>
+<td style="text-align:left">为数据提供加密压缩服务</td>
+<td>加密：AES、DES、3DES压缩：zip</td>
+<td></td>
+<td>message</td>
+</tr>
+<tr>
+<td>会话层</td>
+<td style="text-align:left">为数据处理提供平台</td>
+<td>os：ios（internet operating system 思科的）</td>
+<td></td>
+<td>message</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td style="text-align:left">为数据提供可靠和不可靠传输</td>
+<td>TCP、UDP、SPX</td>
+<td></td>
+<td>Fragment数据段</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td style="text-align:left">为数据提供逻辑寻址，提供转发差错控制和纠正</td>
+<td>IP、IPX（Novell）、Appleta</td>
+<td>路由器</td>
+<td>Packet数据包</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td style="text-align:left">为数据提供物理寻址，提供交换功能，差错控制无法纠正</td>
+<td>LAN：IEEE802.3、IEEE802.5、FDDI WAN：PPP、Frame-relay、HDLC</td>
+<td>交换机（switch）、桥（bridge）</td>
+<td>Frame数据帧</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td style="text-align:left">为数据传输定义限速，线缆，电压</td>
+<td>RS232、RJ45X.25</td>
+<td>集线器Hub、中继器repeater、调制解调器modem</td>
+<td>数据位</td>
+</tr>
+</tbody>
+</table>
+<h1 id="路由器的使用"><a href="#路由器的使用" class="headerlink" title="路由器的使用"></a>路由器的使用</h1><h2 id="连接真机设备"><a href="#连接真机设备" class="headerlink" title="连接真机设备"></a>连接真机设备</h2><h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><p>secure CRT（WIN7及以上系统需要，XP自带超级终端）</p>
+<p>RS232转接线驱动</p>
+<h3 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h3><p>console线，RS232-USB转接线、双绞线（直连和交叉各一根，直连用于交换机，交叉用于路由器）。</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>使用console线链接设备的“console”端口，RS-232连接电脑</li>
+<li>安装RS-232转接线驱动，电脑查看端口。      <code>“控制面板”--“设备管理器”--“端口（com和LPT）”</code></li>
+<li>打开CRT，使用CRT桥接         <code>“快速连接”--“协议：serial”--“端口com5”--“波特率9600”--“连接”</code></li>
+</ol>
+<h2 id="设备模式"><a href="#设备模式" class="headerlink" title="设备模式"></a>设备模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; //用户模式，权限为0，查看设备简单信息。</span><br><span class="line"></span><br><span class="line"># //特权模式，中等权限，可以对设备进行简单修改。</span><br><span class="line"></span><br><span class="line">(config)# //全局模式，可以对设备做任何操作。</span><br></pre></td></tr></table></figure>
+<h3 id="模式切换"><a href="#模式切换" class="headerlink" title="模式切换"></a>模式切换</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;enable //进入特权  可缩写为`en`</span><br><span class="line"></span><br><span class="line">#configure terminal  //进入全局，可缩写为`conf t`</span><br><span class="line"></span><br><span class="line">exit //逐级退出</span><br><span class="line"></span><br><span class="line">end //直接退出到特权，只能退出到特权，快捷方式为`ctrl+z`</span><br></pre></td></tr></table></figure>
+<h2 id="安全设置"><a href="#安全设置" class="headerlink" title="安全设置"></a>安全设置</h2><h3 id="1-enable密码（用于保护特权模式）："><a href="#1-enable密码（用于保护特权模式）：" class="headerlink" title="1.enable密码（用于保护特权模式）："></a>1.enable密码（用于保护特权模式）：</h3><h4 id="全局模式下："><a href="#全局模式下：" class="headerlink" title="全局模式下："></a>全局模式下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enable password + 密码1 //明文密码，层级为0。</span><br><span class="line"></span><br><span class="line">enable secret + 密码2 //密文密码，层级为5.。</span><br></pre></td></tr></table></figure>
+<h4 id="特权模式下："><a href="#特权模式下：" class="headerlink" title="特权模式下："></a>特权模式下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">write //保存配置，可简写为wr</span><br></pre></td></tr></table></figure>
+<h4 id="查看设备配置"><a href="#查看设备配置" class="headerlink" title="查看设备配置"></a>查看设备配置</h4><p>在特权模式下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show running-config //查看设备当前运行的配置，可简写为sh run</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-控制台密码（用于保护使用后门接入）"><a href="#2-控制台密码（用于保护使用后门接入）" class="headerlink" title="2.控制台密码（用于保护使用后门接入）"></a>2.控制台密码（用于保护使用后门接入）</h3><h4 id="全局模式下：-1"><a href="#全局模式下：-1" class="headerlink" title="全局模式下："></a>全局模式下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Line cosole 0</span><br><span class="line">password +密码  ///设置密码</span><br><span class="line">login  /// 激活密码，登录时使用</span><br></pre></td></tr></table></figure>
+<p>特权模式下再保存密码</p>
+<h3 id="3-远程登录密码（用于保护Telnet远程登录设备）"><a href="#3-远程登录密码（用于保护Telnet远程登录设备）" class="headerlink" title="3.远程登录密码（用于保护Telnet远程登录设备）"></a>3.远程登录密码（用于保护Telnet远程登录设备）</h3><h4 id="路由器配置"><a href="#路由器配置" class="headerlink" title="路由器配置"></a>路由器配置</h4><h5 id="全局模式下：-2"><a href="#全局模式下：-2" class="headerlink" title="全局模式下："></a>全局模式下：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int f0/0 //进入接口，电脑连接的接口。</span><br><span class="line"></span><br><span class="line">no shutdown //打开接口，默认路由器的接口是关闭状态。</span><br><span class="line"></span><br><span class="line">ip address 192.168.1.1 255.255.255.0 //配置ip地址</span><br></pre></td></tr></table></figure>
+<h5 id="电脑配置："><a href="#电脑配置：" class="headerlink" title="电脑配置："></a>电脑配置：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“控制面板”——“网络和共享中心”——“更改适配器设置”——右击“本地连接”或者“以太网”——“属性”——“Internet协议版本4”——修改ip地址——确定——确定</span><br></pre></td></tr></table></figure>
+<h4 id="测试路由器和电脑连通性"><a href="#测试路由器和电脑连通性" class="headerlink" title="测试路由器和电脑连通性"></a>测试路由器和电脑连通性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">win+r——cmd——ping 192.168.1.1</span><br></pre></td></tr></table></figure>
+<h4 id="路由器远程登录开启"><a href="#路由器远程登录开启" class="headerlink" title="路由器远程登录开启"></a>路由器远程登录开启</h4><h5 id="全局模式下"><a href="#全局模式下" class="headerlink" title="全局模式下"></a>全局模式下</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">line vty 0  4  ///进入虚拟终端，打开0--4线程</span><br><span class="line">password  xxxxx   ///配置密码</span><br><span class="line">login    ///激活密码</span><br><span class="line">电脑远程登录路由器：</span><br><span class="line">win+r ——— cmd——Telnet 192.1681.1——输入远程登录密码——再输入enable密码</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/30/OSI七层网络协议/" data-id="cjvw4sk6s0000ukvij8xi4elr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CCIE相关/">CCIE相关</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/11/二层技术：数据链路层（交换机）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          二层技术：数据链路层（交换机）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/31/python学习笔记（1）：列表、元组和字典/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python学习笔记：列表、元组、字典和集合</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCIE相关/">CCIE相关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo相关/">Hexo相关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CCIE相关/" style="font-size: 20px;">CCIE相关</a> <a href="/tags/Hexo相关/" style="font-size: 10px;">Hexo相关</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/11/二层技术：数据链路层（交换机）/">二层技术：数据链路层（交换机）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/30/OSI七层网络协议/">OSI七层网路协议和路由器的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/31/python学习笔记（1）：列表、元组和字典/">Python学习笔记：列表、元组、字典和集合</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/19/markdow使用小结/">Markdown使用小结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 xwtttt<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

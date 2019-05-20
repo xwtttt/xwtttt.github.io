@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python学习笔记：列表、元组、字典和集合 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="列表（list）是python里面内置的一种数据类型，是一种有序集合，可以随时添加删除排序其中的元素。  元组（tuple）和列表非常类似，但是元组一旦初始化就不能修改了。 字典（dict）全称dictionary，使用键-值（key-value）存储，具有极快的查找速度。">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习笔记：列表、元组、字典和集合">
+<meta property="og:url" content="http://yoursite.com/2018/07/31/python学习笔记（1）：列表、元组和字典/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="列表（list）是python里面内置的一种数据类型，是一种有序集合，可以随时添加删除排序其中的元素。  元组（tuple）和列表非常类似，但是元组一旦初始化就不能修改了。 字典（dict）全称dictionary，使用键-值（key-value）存储，具有极快的查找速度。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-14T04:23:21.319Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python学习笔记：列表、元组、字典和集合">
+<meta name="twitter:description" content="列表（list）是python里面内置的一种数据类型，是一种有序集合，可以随时添加删除排序其中的元素。  元组（tuple）和列表非常类似，但是元组一旦初始化就不能修改了。 字典（dict）全称dictionary，使用键-值（key-value）存储，具有极快的查找速度。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python学习笔记（1）：列表、元组和字典" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/31/python学习笔记（1）：列表、元组和字典/" class="article-date">
+  <time datetime="2018-07-30T16:00:04.000Z" itemprop="datePublished">2018-07-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python学习笔记：列表、元组、字典和集合
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>列表（list）</strong>是python里面内置的一种数据类型，是一种有序集合，可以随时添加删除排序其中的元素。 </p>
+<p><strong>元组（tuple）</strong>和列表非常类似，但是元组一旦初始化就不能修改了。</p>
+<p><strong>字典（dict）</strong>全称dictionary，使用<strong>键-值（key-value）</strong>存储，具有极快的查找速度。</p>
+<a id="more"></a>
+<h1 id="列表-list"><a href="#列表-list" class="headerlink" title="列表(list)"></a>列表(list)</h1><p>列表（list）是python里面内置的一种数据类型，是一种有序集合，可以随时添加删除排序其中的元素。 </p>
+<h2 id="定义列表"><a href="#定义列表" class="headerlink" title="定义列表"></a>定义列表</h2><p>定义列表操作如下：</p>
+<blockquote>
+<p><code>classmates = [ &#39;Jack&#39; , &#39;Tony&#39; , &#39;Richard&#39; ]</code> </p>
+</blockquote>
+<p>（python大部分情况下对于字符串的引用中单引号<code>&#39;</code>和双引号<code>&quot;</code>的用法相同）</p>
+<p>变量<code>classmates</code>就是一个列表，列表里存放的是<code>Jack</code> <code>Tony</code> <code>Richard</code> 三个字符串类型的学生姓名，当然列表里的元素当然也可以是不同的数据类型。</p>
+<p>用<code>len()</code>函数可以获取列表元素的个数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;len(classmates)</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>通过下标来访问列表中的元素，下标从0开始计数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;classmates[<span class="number">0</span>]</span><br><span class="line"><span class="string">'Jack'</span></span><br><span class="line">&gt;&gt;&gt;classmates[<span class="number">1</span>]</span><br><span class="line"><span class="string">'Tony'</span></span><br><span class="line">&gt;&gt;&gt;classmates[<span class="number">2</span>]</span><br><span class="line"><span class="string">'Richard'</span></span><br></pre></td></tr></table></figure>
+<h2 id="列表操作"><a href="#列表操作" class="headerlink" title="列表操作"></a>列表操作</h2><h3 id="追加"><a href="#追加" class="headerlink" title="追加"></a>追加</h3><p>列表自带有<code>append()</code>函数，默认将新元素追加到列表的最后，如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'Richard'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.append(<span class="string">'我是新来的'</span>)</span><br><span class="line">&gt;&gt;&gt;classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'Richard'</span>, <span class="string">'我是新来的'</span>]</span><br></pre></td></tr></table></figure></p>
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><p>当想要将元素插入到列表的任意地方时，可以使用<code>insert()</code>函数，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'Richard'</span>, <span class="string">'我是新来的'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.insert(<span class="number">2</span>,<span class="string">'我要插在Richard的前面！'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'我要插在Richard的前面！'</span>, <span class="string">'Richard'</span>, <span class="string">'我是新来的'</span>]</span><br></pre></td></tr></table></figure>
+<p><code>insert()</code>需要传入两个数据，一个是插入的位置，一个为插入的内容，插入之后，后面的数据下标自动加一。</p>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>修改其实就想当于直接赋值给该位置的元素，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'我要插在Richard的前面！'</span>, <span class="string">'Richard'</span>, <span class="string">'我是新来的'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">2</span>] = <span class="string">'hello'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>, <span class="string">'我是新来的'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>删除可以使用<code>pop(i)</code>或者<code>del(i)</code>方法，其<code>i</code>为元素的下标。</p>
+<p>其中<code>del classmates(1) = classmates.pop(1)</code>，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'Richard'</span>, <span class="string">'我要插在Richard的前面！'</span>, <span class="string">'我是新来的'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">del</span> classmates[<span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'Richard'</span>, <span class="string">'我是新来的'</span>]</span><br><span class="line">------------------------------------------------------------</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>, <span class="string">'我是新来的'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>, <span class="string">'我是新来的'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.pop(<span class="number">4</span>)</span><br><span class="line"><span class="string">'我是新来的'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>]</span><br></pre></td></tr></table></figure>
+<p> 其中，<code>classmates.pop()</code>代表默认删除列表最后一个元素。</p>
+<p>如果要删除整个列表，也只需要<code>del classmates</code>即可</p>
+<h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>切片批量获取列表中的元素，例如此时<code>classmates</code>中所包含的元素为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>]</span><br></pre></td></tr></table></figure>
+<p>此时想要获取前三个元素，可以这样写：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>]</span><br></pre></td></tr></table></figure>
+<p>此时可以发现切片的原则是<strong>顾头不顾尾</strong> ，即上面的例子中，只从索引<code>0</code> 开始取，到索引<code>3</code>为止，但是不包括索引<code>3</code>，即索引<code>0</code> 、<code>1</code> 、<code>2</code>。</p>
+<p>如果一个索引是<code>0</code>，还可以省略，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[:<span class="number">3</span>]</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>]</span><br></pre></td></tr></table></figure>
+<p>切片还可以倒过来切，即从最后的元素开始取值，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">-2</span>:<span class="number">-1</span>]</span><br><span class="line">[<span class="string">'hello'</span>]</span><br></pre></td></tr></table></figure>
+<p>这即是表示从左往右数倒数第二个至倒数第一个的切片。</p>
+<p>那么问题来了，以上这种倒着切片无法取到最后一个数，怎么取到最后一个数呢，很简单如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">-2</span>:]</span><br><span class="line">[<span class="string">'hello'</span>, <span class="string">'Richard'</span>]</span><br></pre></td></tr></table></figure>
+<p>最后一位空着即可进行最后一位的切片。</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">首先创建一个<span class="number">0</span><span class="number">-99</span>的数列：</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L = list(range(<span class="number">100</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>, <span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">24</span>, <span class="number">25</span>, <span class="number">26</span>, <span class="number">27</span>, <span class="number">28</span>, <span class="number">29</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">32</span>, <span class="number">33</span>, <span class="number">34</span>, <span class="number">35</span>, <span class="number">36</span>, <span class="number">37</span>, <span class="number">38</span>, <span class="number">39</span>, <span class="number">40</span>, <span class="number">41</span>, <span class="number">42</span>, <span class="number">43</span>, <span class="number">44</span>, <span class="number">45</span>, <span class="number">46</span>, <span class="number">47</span>, <span class="number">48</span>, <span class="number">49</span>, <span class="number">50</span>, <span class="number">51</span>, <span class="number">52</span>, <span class="number">53</span>, <span class="number">54</span>, <span class="number">55</span>, <span class="number">56</span>, <span class="number">57</span>, <span class="number">58</span>, <span class="number">59</span>, <span class="number">60</span>, <span class="number">61</span>, <span class="number">62</span>, <span class="number">63</span>, <span class="number">64</span>, <span class="number">65</span>, <span class="number">66</span>, <span class="number">67</span>, <span class="number">68</span>, <span class="number">69</span>, <span class="number">70</span>, <span class="number">71</span>, <span class="number">72</span>, <span class="number">73</span>, <span class="number">74</span>, <span class="number">75</span>, <span class="number">76</span>, <span class="number">77</span>, <span class="number">78</span>, <span class="number">79</span>, <span class="number">80</span>, <span class="number">81</span>, <span class="number">82</span>, <span class="number">83</span>, <span class="number">84</span>, <span class="number">85</span>, <span class="number">86</span>, <span class="number">87</span>, <span class="number">88</span>, <span class="number">89</span>, <span class="number">90</span>, <span class="number">91</span>, <span class="number">92</span>, <span class="number">93</span>, <span class="number">94</span>, <span class="number">95</span>, <span class="number">96</span>, <span class="number">97</span>, <span class="number">98</span>, <span class="number">99</span>]</span><br><span class="line">可以通过切片轻松取出某一段数列，比如前<span class="number">10</span>个数：</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L[::<span class="number">10</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>, <span class="number">60</span>, <span class="number">70</span>, <span class="number">80</span>, <span class="number">90</span>]</span><br><span class="line"></span><br><span class="line">后<span class="number">10</span>个数：</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L[<span class="number">-10</span>:]</span><br><span class="line">[<span class="number">90</span>, <span class="number">91</span>, <span class="number">92</span>, <span class="number">93</span>, <span class="number">94</span>, <span class="number">95</span>, <span class="number">96</span>, <span class="number">97</span>, <span class="number">98</span>, <span class="number">99</span>]</span><br><span class="line"></span><br><span class="line">前<span class="number">11</span><span class="number">-20</span>个数：</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L[<span class="number">10</span>:<span class="number">20</span>]</span><br><span class="line">[<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>]</span><br><span class="line"></span><br><span class="line">前十个数，每两个取一个数：</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L[<span class="number">0</span>:<span class="number">10</span>:<span class="number">2</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]</span><br><span class="line"></span><br><span class="line">所有数，每<span class="number">5</span>个取一个：</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L[::<span class="number">5</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>, <span class="number">30</span>, <span class="number">35</span>, <span class="number">40</span>, <span class="number">45</span>, <span class="number">50</span>, <span class="number">55</span>, <span class="number">60</span>, <span class="number">65</span>, <span class="number">70</span>, <span class="number">75</span>, <span class="number">80</span>, <span class="number">85</span>, <span class="number">90</span>, <span class="number">95</span>]</span><br><span class="line"></span><br><span class="line">原数列：</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L[::]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,..., <span class="number">99</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>前面已经讲过可以通过<code>classnates[i]</code> 来查找<code>classmates</code> 中第<strong>i</strong> 个元素是什么，但如果想知道某个元素在列表中的具体位置可以使用<code>index()</code>函数来解决，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.index(<span class="string">'hello'</span>)</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><p>如果一个列表中有多个同名的元素，可以通过<code>count()</code>函数来统计，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.append(<span class="string">'hello'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>, <span class="string">'hello'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.count(<span class="string">'hello'</span>)</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h3 id="排序和翻转"><a href="#排序和翻转" class="headerlink" title="排序和翻转"></a>排序和翻转</h3><p><code>sort()</code>函数为按照ascll码顺序为列表中的数据排序</p>
+<p><code>reverse()</code>函数是将列表翻转，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'Richard'</span>, <span class="string">'hello'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.reverse()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'hello'</span>, <span class="string">'Richard'</span>, <span class="string">'hello'</span>, <span class="string">'Tony'</span>, <span class="string">'Jack'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.sort()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Richard'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'hello'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>扩展，即有两个列表<code>calssmates</code>和<code>classmates2</code> ,将一个列表合并到另一个列表中，默认合并至末尾，并且被合并的列表仍然<strong>存在</strong>，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates2</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.extend(classmates2)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Richard'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'hello'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝"></a>拷贝</h3><p>在讲拷贝之前我们首先要知道，python中存储列表实际上是以内存地址的方式存储的，所以<code>copy</code>的时候也只是copy一块内存地址，而这个指针指向的真正的内存地址中的内容改变时，copy的变量也会随着改变，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.append([<span class="string">'aaaaaaa'</span>,<span class="string">'bbbbbbb'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Richard'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'hello'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'aaaaaaa'</span>, <span class="string">'bbbbbbb'</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates2 = classmates.copy()     <span class="comment">#classmates是classmates的一份拷贝</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates2</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Richard'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'hello'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'aaaaaaa'</span>, <span class="string">'bbbbbbb'</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">3</span>] = <span class="string">'你好'</span>               <span class="comment">#将classmates中的‘hello’改为‘你好’</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">9</span>][<span class="number">0</span>] = <span class="string">'hello'</span>   <span class="comment">#将classmates中的列表中的aaa改为‘hello’</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Richard'</span>, <span class="string">'Tony'</span>, <span class="string">'你好'</span>, <span class="string">'hello'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'hello'</span>, <span class="string">'bbbbbbb'</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates2</span><br><span class="line">[<span class="string">'Jack'</span>, <span class="string">'Richard'</span>, <span class="string">'Tony'</span>, <span class="string">'hello'</span>, <span class="string">'hello'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'hello'</span>, <span class="string">'bbbbbbb'</span>]]</span><br><span class="line">	                   <span class="comment">#可以看到，classmates2中的数据没有改，而列表中的列表数据改了</span></span><br></pre></td></tr></table></figure>
+<h1 id="元组-tuple"><a href="#元组-tuple" class="headerlink" title="元组(tuple)"></a>元组(tuple)</h1><p>元组和列表非常类似，但是元组一旦初始化就不能修改了。</p>
+<h2 id="定义元组"><a href="#定义元组" class="headerlink" title="定义元组"></a>定义元组</h2><p>定义元组的操作如下：</p>
+<p><code>classmates = (&#39;Jack&#39; , &#39;Tony&#39; , &#39;Richard&#39;)</code> </p>
+<p>现在，classmates这个tuple不能变了，它也没有append()，insert()这样的方法。其他获取元素的方法和列表是一样的，你可以正常地使用<code>classmates[0]</code>，<code>classmates[-1]</code>，但不能赋值成另外的元素。</p>
+<p>不可变的tuple有什么意义？因为tuple不可变，所以代码更安全。如果可能，能用tuple代替list就尽量用tuple。</p>
+<p><strong>注意</strong>：要定义一个只有1个元素的tuple，如果你这么定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = (<span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>定义的不是tuple，是<code>1</code>这个数！这是因为括号<code>()</code>既可以表示tuple，又可以表示数学公式中的小括号，这就产生了歧义，因此，Python规定，这种情况下，按小括号进行计算，计算结果自然是<code>1</code>。</p>
+<p>所以，只有1个元素的tuple定义时必须加一个逗号<code>,</code>，来消除歧义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = (<span class="number">1</span>,)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t</span><br><span class="line">(<span class="number">1</span>,)</span><br></pre></td></tr></table></figure>
+<p>最后来看一个“可变的”tuple：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = (<span class="string">'a'</span>, <span class="string">'b'</span>, [<span class="string">'A'</span>, <span class="string">'B'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t[<span class="number">2</span>][<span class="number">0</span>] = <span class="string">'X'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t[<span class="number">2</span>][<span class="number">1</span>] = <span class="string">'Y'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t</span><br><span class="line">(<span class="string">'a'</span>, <span class="string">'b'</span>, [<span class="string">'X'</span>, <span class="string">'Y'</span>])</span><br></pre></td></tr></table></figure>
+<p>这个tuple定义的时候有3个元素，分别是<code>&#39;a&#39;</code>，<code>&#39;b&#39;</code>和一个list。不是说tuple一旦定义后就不可变了吗？怎么后来又变了？</p>
+<p>表面上看，tuple的元素确实变了，但其实变的不是tuple的元素，而是list的元素。tuple一开始指向的list并没有改成别的list，所以，tuple所谓的“不变”是说，tuple的每个元素，指向永远不变。即指向<code>&#39;a&#39;</code>，就不能改成指向<code>&#39;b&#39;</code>，指向一个list，就不能改成指向其他对象，但指向的这个list本身是可变的！</p>
+<p>理解了“指向不变”后，要创建一个内容也不变的tuple怎么做？那就必须保证tuple的每一个元素本身也不能变。</p>
+<h2 id="元组操作"><a href="#元组操作" class="headerlink" title="元组操作"></a>元组操作</h2><p>元组只有两个方法：一个是<code>count()</code>，一个是<code>index</code></p>
+<h1 id="字典-dict"><a href="#字典-dict" class="headerlink" title="字典(dict)"></a>字典(dict)</h1><p>dict全称dictionary，在其他语言中也称为map</p>
+<p>字典使用<strong>键-值（key-value）</strong>存储，具有极快的查找速度。 </p>
+<h2 id="定义字典"><a href="#定义字典" class="headerlink" title="定义字典"></a>定义字典</h2><p>初始化一个字典：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;<span class="string">'Jack'</span>:<span class="number">50</span>,<span class="string">'Tony'</span>:<span class="number">50</span>,<span class="string">'Richard'</span>:<span class="number">55</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'Tony'</span>]</span><br><span class="line"><span class="number">50</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意：定义字典时是<code>{}</code>，使用字典时是<code>[]</code>。因为使用的时候已经将它当做列表来使用了。但是字典只能通过key来使用value</strong></p>
+<p>把数据放入dict的方法，除了初始化时指定外，还可以通过<strong>key</strong>放入： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'xwtttt'</span>] = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'xwtttt'</span>]</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p>由于一个key只能对应一个value，所以，多次对一个key放入value，后面的值会把前面的值冲掉：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'Jack'</span>] = <span class="number">90</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'Jack'</span>]</span><br><span class="line"><span class="number">90</span></span><br></pre></td></tr></table></figure>
+<p>如果key不存在，字典就会报错：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'a'</span>]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">KeyError: <span class="string">'a'</span></span><br></pre></td></tr></table></figure>
+<p>字典的特性：</p>
+<ul>
+<li>key唯一，所以天生去重</li>
+<li>请务必注意，dict内部存放的顺序和key放入的顺序是没有关系的。 </li>
+<li>查找和插入的速度极快，不会随着key的增加而变慢；</li>
+<li>需要占用大量的内存，内存浪费多。</li>
+</ul>
+<p>所以，dict是用空间来换取时间的一种方法。</p>
+<p>dict可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用dict非常重要，需要牢记的第一条就是dict的key必须是<strong>不可变对象</strong>。</p>
+<p>这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。这个通过key计算位置的算法称为哈希算法（Hash）。</p>
+<p>要保证hash的正确性，作为key的对象就不能变。在Python中，字符串、整数等都是不可变的，因此，可以放心地作为key。而list是可变的，就不能作为key：</p>
+<h2 id="字典操作"><a href="#字典操作" class="headerlink" title="字典操作"></a>字典操作</h2><p>字典的操作大致和列表相同（如删除等），这里只列举几个不太相同的用法</p>
+<h3 id="查找-1"><a href="#查找-1" class="headerlink" title="查找"></a>查找</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#判断某元素是否在字典中，使用in用法，返回一个布尔值。</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d</span><br><span class="line">&#123;<span class="string">'Jack'</span>: <span class="number">50</span>, <span class="string">'Tony'</span>: <span class="number">50</span>, <span class="string">'Richard'</span>: <span class="number">55</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'Jack'</span> <span class="keyword">in</span> d  <span class="comment">#查找某元素是否在字典中，如果在，返回True，否则，返回False</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'xwtttt'</span> <span class="keyword">in</span> d</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#判断元素是否在字典中，使用get方法，返回一个None，或者Value</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.get(<span class="string">'Jack'</span>)</span><br><span class="line"><span class="number">50</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.get(<span class="string">'xwtttt'</span>)  <span class="comment">#注意：返回None的时候Python的交互环境不显示结果。</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.get(<span class="string">'xwtttt'</span>,<span class="number">-1</span>)  <span class="comment">#此时指定一个value返回</span></span><br><span class="line"><span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<h3 id="多级字典的嵌套"><a href="#多级字典的嵌套" class="headerlink" title="多级字典的嵌套"></a>多级字典的嵌套</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">av_catalog = &#123;</span><br><span class="line">    <span class="string">"欧美"</span>:&#123;</span><br><span class="line">        <span class="string">"www.youporn.com"</span>: [<span class="string">"很多免费的,世界最大的"</span>,<span class="string">"质量一般"</span>],</span><br><span class="line">        <span class="string">"www.pornhub.com"</span>: [<span class="string">"很多免费的,也很大"</span>,<span class="string">"质量比yourporn高点"</span>],</span><br><span class="line">        <span class="string">"letmedothistoyou.com"</span>: [<span class="string">"多是自拍,高质量图片很多"</span>,<span class="string">"资源不多,更新慢"</span>],</span><br><span class="line">        <span class="string">"x-art.com"</span>:[<span class="string">"质量很高,真的很高"</span>,<span class="string">"全部收费,屌比请绕过"</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"日韩"</span>:&#123;</span><br><span class="line">        <span class="string">"tokyo-hot"</span>:[<span class="string">"质量怎样不清楚,个人已经不喜欢日韩范了"</span>,<span class="string">"听说是收费的"</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"大陆"</span>:&#123;</span><br><span class="line">        <span class="string">"1024"</span>:[<span class="string">"全部免费,真好,好人一生平安"</span>,<span class="string">"服务器在国外,慢"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">av_catalog[<span class="string">"大陆"</span>][<span class="string">"1024"</span>][<span class="number">1</span>] += <span class="string">",可以用爬虫爬下来"</span></span><br><span class="line">print(av_catalog[<span class="string">"大陆"</span>][<span class="string">"1024"</span>])</span><br><span class="line"><span class="comment">#ouput </span></span><br><span class="line">[<span class="string">'全部免费,真好,好人一生平安'</span>, <span class="string">'服务器在国外,慢,可以用爬虫爬下来'</span>]</span><br></pre></td></tr></table></figure>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。</p>
+<p>要创建一个set，需要提供一个list作为输入集合：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = set([1, 2, 3])</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;1, 2, 3&#125;</span><br></pre></td></tr></table></figure>
+<p>注意，传入的参数<code>[1, 2, 3]</code>是一个list，而显示的<code>{1, 2, 3}</code>只是告诉你这个set内部有1，2，3这3个元素，显示的顺序也不表示set是有序的。。</p>
+<p>重复元素在set中自动被过滤：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = set([1, 1, 2, 2, 3, 3])</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;1, 2, 3&#125;</span><br></pre></td></tr></table></figure>
+<p>通过<code>add(key)</code>方法可以添加元素到set中，可以重复添加，但不会有效果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s.add(4)</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br><span class="line">&gt;&gt;&gt; s.add(4)</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
+<p>通过<code>remove(key)</code>方法可以删除元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s.remove(4)</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;1, 2, 3&#125;</span><br></pre></td></tr></table></figure>
+<p>set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s1 = set([1, 2, 3])</span><br><span class="line">&gt;&gt;&gt; s2 = set([2, 3, 4])</span><br><span class="line">&gt;&gt;&gt; s1 &amp; s2</span><br><span class="line">&#123;2, 3&#125;</span><br><span class="line">&gt;&gt;&gt; s1 | s2</span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
+<p>set和dict的唯一区别仅在于没有存储对应的value，但是，set的原理和dict一样，所以，同样不可以放入可变对象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。试试把list放入set，看看是否会报错。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/31/python学习笔记（1）：列表、元组和字典/" data-id="cjvw4sk7x000gukvi2k0fi9n0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/30/OSI七层网络协议/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          OSI七层网路协议和路由器的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/19/markdow使用小结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Markdown使用小结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCIE相关/">CCIE相关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo相关/">Hexo相关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CCIE相关/" style="font-size: 20px;">CCIE相关</a> <a href="/tags/Hexo相关/" style="font-size: 10px;">Hexo相关</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/11/二层技术：数据链路层（交换机）/">二层技术：数据链路层（交换机）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/30/OSI七层网络协议/">OSI七层网路协议和路由器的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/31/python学习笔记（1）：列表、元组和字典/">Python学习笔记：列表、元组、字典和集合</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/19/markdow使用小结/">Markdown使用小结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 xwtttt<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
