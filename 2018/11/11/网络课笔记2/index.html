@@ -7,7 +7,7 @@
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
@@ -134,7 +134,7 @@
 
 
 
-  <title>计算机网络课笔记 2 | xwtttt</title>
+  <title>计算机网络课笔记 2 | xwtttt</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -153,7 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -332,7 +332,7 @@
 </ol>
 <p>防环机制：生成树spanning-tree protocol（STP）</p>
 <p>原理：将环路中某些接口进行逻辑上的阻塞blocking，形成断开环路的效果，当有效链路发生物理上的down，那么blocking接口会进入forwarding转发状态（需要50s）。</p>
-<p>##VLAN（Virtual Local Area Network）：虚拟局域网<br>作用：将交换机上的网络进行逻辑上的分段（一个VLAN = 一个广播域 = 一个网段）</p>
+<h2 id="VLAN（Virtual-Local-Area-Network）：虚拟局域网"><a href="#VLAN（Virtual-Local-Area-Network）：虚拟局域网" class="headerlink" title="VLAN（Virtual Local Area Network）：虚拟局域网"></a>VLAN（Virtual Local Area Network）：虚拟局域网</h2><p>作用：将交换机上的网络进行逻辑上的分段（一个VLAN = 一个广播域 = 一个网段）</p>
 <p>优点：分段，灵活，安全</p>
 <p>VLAN范围：<code>0-4095</code></p>
 <ul>
@@ -346,7 +346,7 @@
 <h2 id="干道：trunk"><a href="#干道：trunk" class="headerlink" title="干道：trunk"></a>干道：trunk</h2><p>作用：用于封装交换机之间的链路，用于不同vlan数据帧打标记。<br><img src="/img/CCIE/trunk链路.png" alt></p>
 <p><strong>Trunk打标记协议</strong>：<code>IEEE802.1q</code>和<code>ISL</code></p>
 <ol>
-<li><strong>IEEE802.1q</strong>：共有标准，支持不同的厂商之间交换vlan信息，也称为dot1q，共有4个字节，数据帧格式如下表：<br>| 2字节      | 3位         | 1位      | 12位         |<br>| ———- | ———– | ——– | ———— |<br>| 以太网类型 | 优先级位0-7 | 令牌环位 | VLAN-ID 4069 |</li>
+<li><strong>IEEE802.1q</strong>：共有标准，支持不同的厂商之间交换vlan信息，也称为dot1q，共有4个字节，数据帧格式如下表：<br>| 2字节      | 3位         | 1位      | 12位         |<br>| ————— | —————- | ———— | —————— |<br>| 以太网类型 | 优先级位0-7 | 令牌环位 | VLAN-ID 4069 |</li>
 <li><strong>ISL</strong>：思科私有标准，共有30个字节，前26字节，后4字节，中间只有10位可用于VLAN-ID的标记（2^10=1024）。<br> <img src="/img/CCIE/ISL.png" alt="Alt text"></li>
 </ol>
 <p><strong>Trunk配置</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Int  range  f0/5 - 6  ///同时进入f0/5和f0/6</span><br><span class="line">Switchport  trunk  encapsulation  dot1q  ///交换机干道封装选择dot1q(IEEE 802.1q)，在二层交换机无法配置</span><br><span class="line">Switchport  mode  trunk ///交换机接口模式为trunk模式（on模式），二层交换机只配一条</span><br><span class="line">//简写：</span><br><span class="line">Int  ran  f0/5 - 6</span><br><span class="line">Sw  tr  en  do </span><br><span class="line">Sw  mo  tr</span><br></pre></td></tr></table></figure></p>
@@ -391,8 +391,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/02/指数加权滑动平均/" rel="prev" title="计算机网络课笔记 2">
-                计算机网络课笔记 2 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/04/02/指数加权滑动平均/" rel="prev" title="动量梯度下降法">
+                动量梯度下降法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -507,7 +507,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二层技术：数据链路层（交换机）"><span class="nav-number">1.</span> <span class="nav-text">二层技术：数据链路层（交换机）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机功能"><span class="nav-number">1.1.</span> <span class="nav-text">交换机功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）mac地址学习"><span class="nav-number">1.1.1.</span> <span class="nav-text">（1）mac地址学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）-数据帧的转发和过滤"><span class="nav-number">1.1.2.</span> <span class="nav-text">（2） 数据帧的转发和过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）二层网络防环"><span class="nav-number">1.1.3.</span> <span class="nav-text">（3）二层网络防环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#干道：trunk"><span class="nav-number">1.2.</span> <span class="nav-text">干道：trunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VLAN间通信：单臂路由"><span class="nav-number">1.3.</span> <span class="nav-text">VLAN间通信：单臂路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VTP：vlan-trunk-protocol"><span class="nav-number">1.4.</span> <span class="nav-text">VTP：vlan  trunk  protocol</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二层技术：数据链路层（交换机）"><span class="nav-number">1.</span> <span class="nav-text">二层技术：数据链路层（交换机）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机功能"><span class="nav-number">1.1.</span> <span class="nav-text">交换机功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）mac地址学习"><span class="nav-number">1.1.1.</span> <span class="nav-text">（1）mac地址学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）-数据帧的转发和过滤"><span class="nav-number">1.1.2.</span> <span class="nav-text">（2） 数据帧的转发和过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）二层网络防环"><span class="nav-number">1.1.3.</span> <span class="nav-text">（3）二层网络防环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VLAN（Virtual-Local-Area-Network）：虚拟局域网"><span class="nav-number">1.2.</span> <span class="nav-text">VLAN（Virtual Local Area Network）：虚拟局域网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#干道：trunk"><span class="nav-number">1.3.</span> <span class="nav-text">干道：trunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VLAN间通信：单臂路由"><span class="nav-number">1.4.</span> <span class="nav-text">VLAN间通信：单臂路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VTP：vlan-trunk-protocol"><span class="nav-number">1.5.</span> <span class="nav-text">VTP：vlan  trunk  protocol</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -654,7 +654,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -707,6 +707,8 @@
   
 
   
+  
+
 
   
 
