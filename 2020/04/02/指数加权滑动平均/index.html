@@ -79,14 +79,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="主页">
-<meta property="og:url" content="http://yoursite.com/home/index.html">
+<meta name="description" content="动量梯度下降法当你想计算数据的平均，比如下图就是伦敦一年的天气统计数据  如果你想计算一年中温度的趋势，即局部平均或者滑动平均，你可以这么做：$v_0 = 0\v_2 = 0.9v_1 + 0.1\theta_1\v_3 = 0.9v_2 + 0.1\theta_2\…\v_t = 0.9v_{t-1} + 0.1\theta_t\$其中 $ v_t $ 代表 $\frac{1}{1-\beta}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xwtttt">
+<meta property="og:url" content="http://yoursite.com/2020/04/02/指数加权滑动平均/index.html">
 <meta property="og:site_name" content="xwtttt">
+<meta property="og:description" content="动量梯度下降法当你想计算数据的平均，比如下图就是伦敦一年的天气统计数据  如果你想计算一年中温度的趋势，即局部平均或者滑动平均，你可以这么做：$v_0 = 0\v_2 = 0.9v_1 + 0.1\theta_1\v_3 = 0.9v_2 + 0.1\theta_2\…\v_t = 0.9v_{t-1} + 0.1\theta_t\$其中 $ v_t $ 代表 $\frac{1}{1-\beta}">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-17T07:37:01.928Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/02/img/weather.jpg">
+<meta property="og:updated_time" content="2020-04-02T13:05:31.111Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="主页">
+<meta name="twitter:title" content="xwtttt">
+<meta name="twitter:description" content="动量梯度下降法当你想计算数据的平均，比如下图就是伦敦一年的天气统计数据  如果你想计算一年中温度的趋势，即局部平均或者滑动平均，你可以这么做：$v_0 = 0\v_2 = 0.9v_1 + 0.1\theta_1\v_3 = 0.9v_2 + 0.1\theta_2\…\v_t = 0.9v_{t-1} + 0.1\theta_t\$其中 $ v_t $ 代表 $\frac{1}{1-\beta}">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/02/img/weather.jpg">
 
 
 
@@ -116,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/home/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/02/指数加权滑动平均/">
 
 
 
 
 
-  <title>主页 | xwtttt</title>
+  <title> | xwtttt</title>
   
 
 
@@ -217,33 +222,147 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/指数加权滑动平均/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xwtttt">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xwtttt">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">主页</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-02T21:05:18+08:00">
+                2020-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="动量梯度下降法"><a href="#动量梯度下降法" class="headerlink" title="动量梯度下降法"></a>动量梯度下降法</h1><p>当你想计算数据的平均，比如下图就是伦敦一年的天气统计数据</p>
+<p><img src="..\img\weather.jpg" alt></p>
+<p>如果你想计算一年中温度的趋势，即局部平均或者滑动平均，你可以这么做：<br>$v_0 = 0\<br>v_2 = 0.9v_1 + 0.1\theta_1\<br>v_3 = 0.9v_2 + 0.1\theta_2\<br>…\<br>v_t = 0.9v_{t-1} + 0.1\theta_t\$<br>其中 $ v_t $ 代表 $\frac{1}{1-\beta}$ 天温度的平均，$\theta_t$代表第$t$天的温度。<br>于是我们给出公式：<br>$$<br>v_t = \beta v_{t-1} + (1-\beta)\theta_t<br>$$<br>例如 $\beta = 0.9$ 时，$v_t$ 代表前十天温度的平均（为什么下面会讲），$\beta = 0.98$ 时，$v_t$ 代表前 50 天温度的平均。</p>
+<p>我们假设 $\beta = 0.9$，按照降序排列，列出相应的等式了解一下它是如何计算每日气温的：<br>$<br>v_{100} = 0.9v_{99} + 0.1\theta_{100}\<br>v_{99} = 0.9v_{98} + 0.1\theta_{99}\<br>v_{98} = 0.9v_{97} + 0.1\theta_{98}\<br>…<br>$</p>
+<p>将式子化简，我们于是有：</p>
+<p>$v_{100} = 0.1\theta_{100} + 0.9<em>0.1\theta_{99} + 0.9^2</em>0.1\theta_{98} + 0.9^3*0.1\theta_{97} + …$</p>
+<p>这就是我们对第 100 天数据的预测。我们可以看到，这个预测分别是一个不断衰减的权重 ( 即<strong>指数衰减函数</strong>：$ 0.1, 0.1<em>0.9, 0.1</em>0.9^2, 0.1*0.9^3…$ ) 乘以一个固定的数据 ( $ \theta_{100}, \theta_{99}, \theta_{98},…$ ) 然后求和。</p>
+<p>然后我们可能好奇，这到底是前几天的气温平均值呢？按照上面的例子来说，$0.9^{10}$ 大约等于 $\frac{1}{e}$，即经过10天的时间，指数衰减函数能降到峰值的 $\frac{1}{e}$ 左右，即在10天前的数据的权重不到当天数据权重的 $\frac{1}{e}$ 。因此这应该是前10 天气温的平均值，即在这个数据条件下，指数加权平均值只关注最近十天的气温值。</p>
+<p>再举个例子，当 $\beta = 0.98$ 时，$0.98$ 的几次方才能使这个数据足够小呢，结果大概是 $0.98^{50}$ 约等于 $\frac{1}{e}$，即 50 天前数据的权重衰减为当前数据的 $\frac{1}{e}$，因此当 $\beta = 0.98$ 时，我们只关注前 50 个数据。</p>
+<p>于是我们有 $ \frac{1}{1-\beta}$ 来衡量指数滑动平均关注哪些数据。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/11/网络课笔记2/" rel="next" title="计算机网络课笔记 2">
+                <i class="fa fa-chevron-left"></i> 计算机网络课笔记 2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -276,8 +395,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -319,6 +447,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#动量梯度下降法"><span class="nav-number">1.</span> <span class="nav-text">动量梯度下降法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
