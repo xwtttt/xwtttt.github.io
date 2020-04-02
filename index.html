@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/04/02/指数加权滑动平均/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2020/04/02/指数加权滑动平均/" itemprop="url">计算机网络课笔记 2</a></h1>
         
 
         <div class="post-meta">
@@ -260,7 +260,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-02T21:05:18+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-02T21:08:00+08:00">
                 2020-04-02
               </time>
             
@@ -300,7 +300,8 @@
       
         
           
-            <h1 id="动量梯度下降法"><a href="#动量梯度下降法" class="headerlink" title="动量梯度下降法"></a>动量梯度下降法</h1><p>当你想计算数据的平均，比如下图就是伦敦一年的天气统计数据</p>
+            <a id="more"></a>
+<h1 id="动量梯度下降法"><a href="#动量梯度下降法" class="headerlink" title="动量梯度下降法"></a>动量梯度下降法</h1><p>当你想计算数据的平均，比如下图就是伦敦一年的天气统计数据</p>
 <p><img src="..\img\weather.jpg" alt></p>
 <p>如果你想计算一年中温度的趋势，即局部平均或者滑动平均，你可以这么做：<br>$v_0 = 0\<br>v_2 = 0.9v_1 + 0.1\theta_1\<br>v_3 = 0.9v_2 + 0.1\theta_2\<br>…\<br>v_t = 0.9v_{t-1} + 0.1\theta_t\$<br>其中 $ v_t $ 代表 $\frac{1}{1-\beta}$ 天温度的平均，$\theta_t$代表第$t$天的温度。<br>于是我们给出公式：<br>$$<br>v_t = \beta v_{t-1} + (1-\beta)\theta_t<br>$$<br>例如 $\beta = 0.9$ 时，$v_t$ 代表前十天温度的平均（为什么下面会讲），$\beta = 0.98$ 时，$v_t$ 代表前 50 天温度的平均。</p>
 <p>我们假设 $\beta = 0.9$，按照降序排列，列出相应的等式了解一下它是如何计算每日气温的：<br>$<br>v_{100} = 0.9v_{99} + 0.1\theta_{100}\<br>v_{99} = 0.9v_{98} + 0.1\theta_{99}\<br>v_{98} = 0.9v_{97} + 0.1\theta_{98}\<br>…<br>$</p>
