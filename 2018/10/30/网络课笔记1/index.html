@@ -1,4 +1,201 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>计算机网络课笔记 1 | 熊文滔</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.1/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/2.1.4/toastr.min.css"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">计算机网络课笔记 1</h1><a id="logo" href="/.">熊文滔</a><p class="description">希望回首能看到来时的脚印，而不是一片空白</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> </i></a><a href="/archives/"><i class="fa null"> </i></a><a href="/about/"><i class="fa null"> </i></a><a href="/atom.xml"><i class="fa null"> </i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">计算机网络课笔记 1</h1><div class="post-meta">2018-10-30</div><div class="post-content"><p>主要介绍计算机网路的基本结构以及思科路由器的使用方法。</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="主要介绍计算机网路的基本结构以及思科路由器的使用方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络课笔记 1">
+<meta property="og:url" content="http://yoursite.com/2018/10/30/网络课笔记1/index.html">
+<meta property="og:site_name" content="随机波动">
+<meta property="og:description" content="主要介绍计算机网路的基本结构以及思科路由器的使用方法。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-31T05:32:56.270Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络课笔记 1">
+<meta name="twitter:description" content="主要介绍计算机网路的基本结构以及思科路由器的使用方法。">
+
+<link rel="canonical" href="http://yoursite.com/2018/10/30/网络课笔记1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算机网络课笔记 1 | 随机波动</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="随机波动" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">随机波动</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/30/网络课笔记1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="xwtttt">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="随机波动">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机网络课笔记 1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-10-30 13:00:00" itemprop="dateCreated datePublished" datetime="2018-10-30T13:00:00+08:00">2018-10-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-31 13:32:56" itemprop="dateModified" datetime="2020-03-31T13:32:56+08:00">2020-03-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>主要介绍计算机网路的基本结构以及思科路由器的使用方法。</p>
 <a id="more"></a>
 <h1 id="OSI七层网络协议"><a href="#OSI七层网络协议" class="headerlink" title="OSI七层网络协议"></a>OSI七层网络协议</h1><div class="table-container">
 <table>
@@ -83,4 +280,181 @@
 <h5 id="电脑配置："><a href="#电脑配置：" class="headerlink" title="电脑配置："></a>电脑配置：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“控制面板”——“网络和共享中心”——“更改适配器设置”——右击“本地连接”或者“以太网”——“属性”——“Internet协议版本4”——修改ip地址——确定——确定</span><br></pre></td></tr></table></figure>
 <h4 id="测试路由器和电脑连通性"><a href="#测试路由器和电脑连通性" class="headerlink" title="测试路由器和电脑连通性"></a>测试路由器和电脑连通性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">win+r——cmd——ping 192.168.1.1</span><br></pre></td></tr></table></figure>
 <h4 id="路由器远程登录开启"><a href="#路由器远程登录开启" class="headerlink" title="路由器远程登录开启"></a>路由器远程登录开启</h4><h5 id="全局模式下"><a href="#全局模式下" class="headerlink" title="全局模式下"></a>全局模式下</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">line vty 0  4  ///进入虚拟终端，打开0--4线程</span><br><span class="line">password  xxxxx   ///配置密码</span><br><span class="line">login    ///激活密码</span><br><span class="line">电脑远程登录路由器：</span><br><span class="line">win+r ——— cmd——Telnet 192.1681.1——输入远程登录密码——再输入enable密码</span><br></pre></td></tr></table></figure>
-</div><div class="tags"></div><div class="post-nav"><a class="pre" href="/2018/11/11/网络课笔记2/">计算机网络课笔记 2</a><a class="next" href="/2018/07/31/python学习笔记1/">Python笔记</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">熊文滔.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="Copy Successed!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/07/31/python学习笔记1/" rel="prev" title="Python笔记">
+      <i class="fa fa-chevron-left"></i> Python笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/11/11/网络课笔记2/" rel="next" title="计算机网络课笔记 2">
+      计算机网络课笔记 2 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OSI七层网络协议"><span class="nav-number">1.</span> <span class="nav-text">OSI七层网络协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由器的使用"><span class="nav-number">2.</span> <span class="nav-text">路由器的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接真机设备"><span class="nav-number">2.1.</span> <span class="nav-text">连接真机设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件"><span class="nav-number">2.1.1.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件"><span class="nav-number">2.1.2.</span> <span class="nav-text">硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.1.3.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备模式"><span class="nav-number">2.2.</span> <span class="nav-text">设备模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模式切换"><span class="nav-number">2.2.1.</span> <span class="nav-text">模式切换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全设置"><span class="nav-number">2.3.</span> <span class="nav-text">安全设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-enable密码（用于保护特权模式）："><span class="nav-number">2.3.1.</span> <span class="nav-text">1.enable密码（用于保护特权模式）：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局模式下："><span class="nav-number">2.3.1.1.</span> <span class="nav-text">全局模式下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特权模式下："><span class="nav-number">2.3.1.2.</span> <span class="nav-text">特权模式下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看设备配置"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">查看设备配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-控制台密码（用于保护使用后门接入）"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.控制台密码（用于保护使用后门接入）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局模式下：-1"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">全局模式下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-远程登录密码（用于保护Telnet远程登录设备）"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.远程登录密码（用于保护Telnet远程登录设备）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器配置"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">路由器配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#全局模式下：-2"><span class="nav-number">2.3.3.1.1.</span> <span class="nav-text">全局模式下：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#电脑配置："><span class="nav-number">2.3.3.1.2.</span> <span class="nav-text">电脑配置：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试路由器和电脑连通性"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">测试路由器和电脑连通性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器远程登录开启"><span class="nav-number">2.3.3.3.</span> <span class="nav-text">路由器远程登录开启</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#全局模式下"><span class="nav-number">2.3.3.3.1.</span> <span class="nav-text">全局模式下</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">xwtttt</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xwtttt</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
