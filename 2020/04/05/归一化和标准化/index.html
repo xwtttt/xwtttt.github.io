@@ -20,23 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="动量梯度下降算法的小总结">
+  <meta name="description" content="介绍标准化和归一化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动量梯度下降法">
-<meta property="og:url" content="http://yoursite.com/2020/04/02/指数加权滑动平均/index.html">
+<meta property="og:title" content="标准化和归一化">
+<meta property="og:url" content="http://yoursite.com/2020/04/05/归一化和标准化/index.html">
 <meta property="og:site_name" content="随机波动">
-<meta property="og:description" content="动量梯度下降算法的小总结">
+<meta property="og:description" content="介绍标准化和归一化">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/img/weather.jpg">
-<meta property="og:image" content="http://yoursite.com/img/momentum_1.jpg">
-<meta property="og:image" content="http://yoursite.com/img/momentum_2.jpg">
-<meta property="og:updated_time" content="2020-04-03T16:19:52.482Z">
+<meta property="og:updated_time" content="2020-04-05T09:05:45.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="动量梯度下降法">
-<meta name="twitter:description" content="动量梯度下降算法的小总结">
-<meta name="twitter:image" content="http://yoursite.com/img/weather.jpg">
+<meta name="twitter:title" content="标准化和归一化">
+<meta name="twitter:description" content="介绍标准化和归一化">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/02/指数加权滑动平均/">
+<link rel="canonical" href="http://yoursite.com/2020/04/05/归一化和标准化/">
 
 
 <script id="page-configurations">
@@ -49,7 +45,7 @@
   };
 </script>
 
-  <title>动量梯度下降法 | 随机波动</title>
+  <title>标准化和归一化 | 随机波动</title>
   
 
 
@@ -155,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/指数加权滑动平均/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/05/归一化和标准化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -168,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          动量梯度下降法
+          标准化和归一化
         </h1>
 
         <div class="post-meta">
@@ -178,7 +174,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-04-02 21:08:20" itemprop="dateCreated datePublished" datetime="2020-04-02T21:08:20+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-05 14:52:03" itemprop="dateCreated datePublished" datetime="2020-04-05T14:52:03+08:00">2020-04-05</time>
             </span>
 
           
@@ -192,48 +188,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>动量梯度下降算法的小总结<br><a id="more"></a></p>
-<h1 id="动量梯度下降法"><a href="#动量梯度下降法" class="headerlink" title="动量梯度下降法"></a>动量梯度下降法</h1><h2 id="指数加权滑动平均"><a href="#指数加权滑动平均" class="headerlink" title="指数加权滑动平均"></a>指数加权滑动平均</h2><p>在谈论什么是<strong>动量梯度下降法</strong>之前，我们先来谈论一下什么是<strong>指数加权滑动平均</strong>。</p>
-<p>当你想计算数据的平均，比如下图就是伦敦一年的天气统计数据</p>
-<p><img src="/img/weather.jpg" alt></p>
-<p>如果你想计算一年中温度的趋势，即局部平均或者滑动平均，你可以这么做：</p>
+        <p>介绍标准化和归一化</p>
+<a id="more"></a>
+<h1 id="标准化和归一化"><a href="#标准化和归一化" class="headerlink" title="标准化和归一化"></a>标准化和归一化</h1><p>在我们进行数据处理的时候，常常会碰到量纲或者数量级不同的数值。当各个指标之间相差很大的时候，直接使用原始数据进行分析会使得数值较高的指标对综合分析的影响较大，而数值较低的指标对综合分析的影响较小。</p>
+<p>假设一个房价预测模型，自变量为面积和房间数，因变量为房价：</p>
 <script type="math/tex; mode=display">
-v_0 = 0\\
-v_2 = 0.9v_1 + 0.1\theta_1\\
-v_3 = 0.9v_2 + 0.1\theta_2\\
-...\\
-v_t = 0.9v_{t-1} + 0.1\theta_t\\</script><p>其中 $ v_t $ 代表 $\frac{1}{1-\beta}$ 天温度的平均（为什么下面会讲），$\theta_t$ 代表第 $t$ 天的温度。<br>于是我们给出公式：</p>
+y = \theta_1x_1 + \theta_2x_2+b</script><p>其中 $x_1$ 代表房间数，$x_2$ 代表面积，那么在未进行标准化前，其实 $x_2$ 的变化对于数据的影响远远大于 $x_1$ </p>
+<p>因此我们要进行标准化，使数据落入一个小的特定区间，便于不同的单位或者量级的指标能够进行比较和加权。</p>
+<p>本文主要介绍两个方法：min-max 方法和 z-score 方法</p>
+<h2 id="规范化方法（min-max-方法）："><a href="#规范化方法（min-max-方法）：" class="headerlink" title="规范化方法（min-max 方法）："></a>规范化方法（min-max 方法）：</h2><p>对序列 $x_1, x_2, …, x_n$ 进行变换：</p>
 <script type="math/tex; mode=display">
-v_t = \beta v_{t-1} + (1-\beta)\theta_t</script><p>例如：</p>
-<p>$\beta = 0.9$ 时，$v_t$ 代表前十天温度的平均。</p>
-<p>$\beta = 0.98$ 时，$v_t$ 代表前 五十天温度的平均。</p>
-<p>我们假设 $\beta = 0.9$，按照降序排列，列出相应的等式了解一下它是如何计算每日气温的：</p>
+y_i = \frac{X_i - X_{min}}{X_{max} - X_{min}}</script><p>这样得到的新序列 $y_1, y_2, …, y_n \in [0,1]$ 且无量纲</p>
+<h2 id="正规化方法（z-score-方法）："><a href="#正规化方法（z-score-方法）：" class="headerlink" title="正规化方法（z-score 方法）："></a>正规化方法（z-score 方法）：</h2><p>对序列 $x_1, x_2, …, x_n$ 进行变换：</p>
 <script type="math/tex; mode=display">
-v_{100} = 0.9v_{99} + 0.1\theta_{100}\\
-v_{99} = 0.9v_{98} + 0.1\theta_{99}\\
-v_{98} = 0.9v_{97} + 0.1\theta_{98}\\
-...</script><p>将式子化简，我们于是有：</p>
+y_i = \frac{x_i - \overline{x}}{s}</script><p>其中 $\overline{x}$ 为序列 $x$ 的平均值，$s$ 为序列 $x$ 的标准差：</p>
 <script type="math/tex; mode=display">
-v_{100} = 0.1\theta_{100} + 0.9\times 0.1\theta_{99} + 0.9^2\times 0.1\theta_{98} + 0.9^3\times 0.1\theta_{97} + ...</script><p>这就是我们对第 100 天数据的预测。</p>
-<p>我们可以看到，这个预测就是其实是一个不断衰减的系数（$0.1, 0.9\times0.1, 0.9^2\times0.1, 0.9^3\times0.1…$）乘以 $\theta_i$，其中这个不断衰减的系数就叫<strong>指数衰减函数</strong>，意味着这个温度的权重从当天开始向前推，每一天的权重都在下降。</p>
-<p>然后我们可能好奇，这到底是前几天的气温平均值呢？</p>
-<p>还是用 $\beta = 0.9$ 时举例：</p>
-<script type="math/tex; mode=display">
-0.9^{10}\approx\frac{1}{e}</script><p>即经过10天的时间，指数衰减函数能降到峰值的 $\frac{1}{e}$ 左右。换句话说，十天之前的数据对当前温度的计算影响微乎其微，因此，当 $\beta = 0.9$ 指数加权平均值只关注最近十天的气温值。</p>
-<p>再举个例子，当 $\beta = 0.98$ 时，$0.98$ 的几次方才能使这个数据足够小呢？</p>
-<script type="math/tex; mode=display">
-0.98^{50}\approx\frac{1}{e}</script><p>即 50 天前数据的权重衰减为当前数据的 $\frac{1}{e}$，因此当 $\beta = 0.98$ 时，我们关注前五十个数据。</p>
-<p>所以有一个简单的公式： $ \frac{1}{1-\beta}$ 来衡量指数滑动平均关注哪些数据。</p>
-<h2 id="动量梯度下降法-1"><a href="#动量梯度下降法-1" class="headerlink" title="动量梯度下降法"></a>动量梯度下降法</h2><p>铺垫了这么多，什么是动量梯度下降法呢。</p>
-<p>一言以蔽之：算法的主要思想就是<strong>计算梯度的指数加权平均</strong>，然后使用这个梯度来更新权重</p>
-<p>具体来说，如下图所示<img src="/img/momentum_1.jpg" alt></p>
-<p>当你使用 “batch 梯度下降法“或者 ”mini-batch 梯度下降法“时，时常会遇到这种问题：梯度方向正确，但是总会有很多的波动。而我们想加速梯度下降就需要减小这种波动，这时候就可以用到<strong>动量梯度下降法</strong>。</p>
-<p>我们可以计算每一个<strong>参数导数的指数加权滑动平均</strong>，使用这个值来更新参数：</p>
-<script type="math/tex; mode=display">
-V_{dw} = \beta V_{dw} + (1-\beta)dw \to w = w - \alpha V_{dw}\\
-V_{db} = \beta V_{db} + (1-\beta)db \to b = b - \alpha V_{db}</script><p>为什么要这么做呢？举个例子，假如你的梯度下降算法时这样的：</p>
-<p><img src="/img/momentum_2.jpg" alt></p>
-<p>那么事实上它在纵轴上的总体平均值接近于 0，因此使用动量梯度下降算法之后能够减小它在纵向的振幅，而横向的方向总是一致的，所以可以水平方向的平均值仍然较大。那么在经过动量梯度下降算法之后能够显著加速它的下降速度，或者说减弱了前往最小路径上的震荡。</p>
+\overline{x} = \frac{1}{n}\sum_{i=1}^{n}xi</script><script type="math/tex; mode=display">
+s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\overline{x})^2}</script><p>于是生成的新序列 $y_1, y_2, …, y_n$ 的均值为 0，方差为 1，而且无量纲。</p>
 
     </div>
 
@@ -249,8 +220,8 @@ V_{db} = \beta V_{db} + (1-\beta)db \to b = b - \alpha V_{db}</script><p>为什�
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2018/11/11/网络课笔记2/" rel="prev" title="计算机网络课笔记 2">
-      <i class="fa fa-chevron-left"></i> 计算机网络课笔记 2
+    <a href="/2020/04/05/线性回归实战-kaggle房价预测模型/" rel="prev" title="线性回归实战-kaggle房价预测模型">
+      <i class="fa fa-chevron-left"></i> 线性回归实战-kaggle房价预测模型
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -311,7 +282,7 @@ V_{db} = \beta V_{db} + (1-\beta)db \to b = b - \alpha V_{db}</script><p>为什�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#动量梯度下降法"><span class="nav-number">1.</span> <span class="nav-text">动量梯度下降法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指数加权滑动平均"><span class="nav-number">1.1.</span> <span class="nav-text">指数加权滑动平均</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动量梯度下降法-1"><span class="nav-number">1.2.</span> <span class="nav-text">动量梯度下降法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#标准化和归一化"><span class="nav-number">1.</span> <span class="nav-text">标准化和归一化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#规范化方法（min-max-方法）："><span class="nav-number">1.1.</span> <span class="nav-text">规范化方法（min-max 方法）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规化方法（z-score-方法）："><span class="nav-number">1.2.</span> <span class="nav-text">正规化方法（z-score 方法）：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -325,7 +296,7 @@ V_{db} = \beta V_{db} + (1-\beta)db \to b = b - \alpha V_{db}</script><p>为什�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

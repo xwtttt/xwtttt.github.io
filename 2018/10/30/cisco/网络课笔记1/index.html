@@ -20,19 +20,23 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="主要介绍计算机网路的基本结构以及思科路由器的使用方法。">
+  <meta name="description" content="计算机网路的基本结构以及思科路由器的使用方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络课笔记 1">
-<meta property="og:url" content="http://yoursite.com/2018/10/30/网络课笔记1/index.html">
+<meta property="og:title" content="计算机网络课笔记（1）">
+<meta property="og:url" content="http://yoursite.com/2018/10/30/cisco/网络课笔记1/index.html">
 <meta property="og:site_name" content="随机波动">
-<meta property="og:description" content="主要介绍计算机网路的基本结构以及思科路由器的使用方法。">
+<meta property="og:description" content="计算机网路的基本结构以及思科路由器的使用方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-31T05:32:56.270Z">
+<meta property="og:image" content="http://yoursite.com/img/CCIE/路由器存储方式.png">
+<meta property="og:image" content="http://yoursite.com/img/CCIE/路由器硬重启.png">
+<meta property="og:image" content="http://yoursite.com/img/CCIE/show_running_config.png">
+<meta property="og:updated_time" content="2020-04-06T08:52:27.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机网络课笔记 1">
-<meta name="twitter:description" content="主要介绍计算机网路的基本结构以及思科路由器的使用方法。">
+<meta name="twitter:title" content="计算机网络课笔记（1）">
+<meta name="twitter:description" content="计算机网路的基本结构以及思科路由器的使用方法。">
+<meta name="twitter:image" content="http://yoursite.com/img/CCIE/路由器存储方式.png">
 
-<link rel="canonical" href="http://yoursite.com/2018/10/30/网络课笔记1/">
+<link rel="canonical" href="http://yoursite.com/2018/10/30/cisco/网络课笔记1/">
 
 
 <script id="page-configurations">
@@ -45,7 +49,7 @@
   };
 </script>
 
-  <title>计算机网络课笔记 1 | 随机波动</title>
+  <title>计算机网络课笔记（1） | 随机波动</title>
   
 
 
@@ -151,7 +155,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/30/网络课笔记1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/30/cisco/网络课笔记1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +168,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          计算机网络课笔记 1
+          计算机网络课笔记（1）
         </h1>
 
         <div class="post-meta">
@@ -188,7 +192,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>主要介绍计算机网路的基本结构以及思科路由器的使用方法。</p>
+        <p>计算机网路的基本结构以及思科路由器的使用方法。</p>
 <a id="more"></a>
 <h1 id="OSI七层网络协议"><a href="#OSI七层网络协议" class="headerlink" title="OSI七层网络协议"></a>OSI七层网络协议</h1><div class="table-container">
 <table>
@@ -273,6 +277,36 @@
 <h5 id="电脑配置："><a href="#电脑配置：" class="headerlink" title="电脑配置："></a>电脑配置：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“控制面板”——“网络和共享中心”——“更改适配器设置”——右击“本地连接”或者“以太网”——“属性”——“Internet协议版本4”——修改ip地址——确定——确定</span><br></pre></td></tr></table></figure>
 <h4 id="测试路由器和电脑连通性"><a href="#测试路由器和电脑连通性" class="headerlink" title="测试路由器和电脑连通性"></a>测试路由器和电脑连通性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">win+r——cmd——ping 192.168.1.1</span><br></pre></td></tr></table></figure>
 <h4 id="路由器远程登录开启"><a href="#路由器远程登录开启" class="headerlink" title="路由器远程登录开启"></a>路由器远程登录开启</h4><h5 id="全局模式下"><a href="#全局模式下" class="headerlink" title="全局模式下"></a>全局模式下</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">line vty 0  4  ///进入虚拟终端，打开0--4线程</span><br><span class="line">password  xxxxx   ///配置密码</span><br><span class="line">login    ///激活密码</span><br><span class="line">电脑远程登录路由器：</span><br><span class="line">win+r ——— cmd——Telnet 192.1681.1——输入远程登录密码——再输入enable密码</span><br></pre></td></tr></table></figure>
+<h2 id="网络设备密码破解和恢复"><a href="#网络设备密码破解和恢复" class="headerlink" title="网络设备密码破解和恢复"></a>网络设备密码破解和恢复</h2><p><img src="/img/CCIE/路由器存储方式.png" alt="effect"></p>
+<h3 id="路由器密码破解和恢复："><a href="#路由器密码破解和恢复：" class="headerlink" title="路由器密码破解和恢复："></a>路由器密码破解和恢复：</h3><ol>
+<li><p>设备硬重启（关、开电源），然后使用ctrl+c或者ctrl+break阻断设备加载NVRAM中的配置.(不加载密码)</p>
+<p><img src="/img/CCIE/路由器硬重启.png" alt="effect"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rommon 1&gt; confreg  0x2142   //修改寄存器的值，使设备开机时不加载NVRAM。</span><br><span class="line">rommon 2&gt; boot  //继续进行开机</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入没有配置的系统，手动将保存在NVRAM中的配置拷贝到当前运行，NVRAM——&gt;RAM.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//特权模式下：</span><br><span class="line">copy  startup-config    running-config  </span><br><span class="line">         （NVRAM）          （RAM）</span><br><span class="line">//查看运行配置中的密码信息</span><br><span class="line">show  running-config  //查看当前运行的配置（wr之前的内容）</span><br></pre></td></tr></table></figure>
+<p><img src="/img/CCIE/show_running_config.png" alt="effect"></p>
+</li>
+<li><p>通过客户（甲方）请求是否修改密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//全局模式下：</span><br><span class="line">enable  password  +密码  //设置新的密码，覆盖老的。</span><br><span class="line">enable  secret  +密码</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将寄存器值改回0x2102，使设备开机时依然加载NVRAM中的配置，然后保存，软重启。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//全局模式下：</span><br><span class="line">config-register  0x2102   ///修改寄存器</span><br><span class="line">特权模式下：</span><br><span class="line">wr        ///保存</span><br><span class="line">reload   ///软重启</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="交换机密码破解和恢复："><a href="#交换机密码破解和恢复：" class="headerlink" title="交换机密码破解和恢复："></a>交换机密码破解和恢复：</h3><ol>
+<li><p>硬重启，关开电源，按住mode键5-10s，直到设备出现“switch:”字样。</p>
+</li>
+<li><p>初始化flash，查看保存文件，然后修改文件后缀，使设备无法加载保存配置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Switch：flash_init   //初始化</span><br><span class="line">Switch：dir  flash：  //查看文件，查找“config.text”</span><br><span class="line">Switch：rename  flash:config.text   flash:config.old   //修改后缀</span><br><span class="line">Switch：reset   //重启设备</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入空配置设备，将后缀改回，使设备读取，手动加载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//特权模式下：</span><br><span class="line">Rename  flash:config.old   flash:config.text</span><br><span class="line">Copy  flash:config.text  running-config</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看/修改密码，保存并重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//全局模式下：</span><br><span class="line">enable  password  + 密码</span><br><span class="line">enable  secret  + 密码</span><br><span class="line">//特权模式下：</span><br><span class="line">wr</span><br><span class="line">reload</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
     </div>
 
@@ -292,8 +326,8 @@
       <i class="fa fa-chevron-left"></i> Python笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/2018/11/11/网络课笔记2/" rel="next" title="计算机网络课笔记 2">
-      计算机网络课笔记 2 <i class="fa fa-chevron-right"></i>
+    <a href="/2018/11/11/cisco/网络课笔记2/" rel="next" title="计算机网络课笔记（2）">
+      计算机网络课笔记（2） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -353,7 +387,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OSI七层网络协议"><span class="nav-number">1.</span> <span class="nav-text">OSI七层网络协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由器的使用"><span class="nav-number">2.</span> <span class="nav-text">路由器的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接真机设备"><span class="nav-number">2.1.</span> <span class="nav-text">连接真机设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件"><span class="nav-number">2.1.1.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件"><span class="nav-number">2.1.2.</span> <span class="nav-text">硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.1.3.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备模式"><span class="nav-number">2.2.</span> <span class="nav-text">设备模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模式切换"><span class="nav-number">2.2.1.</span> <span class="nav-text">模式切换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全设置"><span class="nav-number">2.3.</span> <span class="nav-text">安全设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-enable密码（用于保护特权模式）："><span class="nav-number">2.3.1.</span> <span class="nav-text">1.enable密码（用于保护特权模式）：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局模式下："><span class="nav-number">2.3.1.1.</span> <span class="nav-text">全局模式下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特权模式下："><span class="nav-number">2.3.1.2.</span> <span class="nav-text">特权模式下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看设备配置"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">查看设备配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-控制台密码（用于保护使用后门接入）"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.控制台密码（用于保护使用后门接入）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局模式下：-1"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">全局模式下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-远程登录密码（用于保护Telnet远程登录设备）"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.远程登录密码（用于保护Telnet远程登录设备）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器配置"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">路由器配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#全局模式下：-2"><span class="nav-number">2.3.3.1.1.</span> <span class="nav-text">全局模式下：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#电脑配置："><span class="nav-number">2.3.3.1.2.</span> <span class="nav-text">电脑配置：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试路由器和电脑连通性"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">测试路由器和电脑连通性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器远程登录开启"><span class="nav-number">2.3.3.3.</span> <span class="nav-text">路由器远程登录开启</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#全局模式下"><span class="nav-number">2.3.3.3.1.</span> <span class="nav-text">全局模式下</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OSI七层网络协议"><span class="nav-number">1.</span> <span class="nav-text">OSI七层网络协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由器的使用"><span class="nav-number">2.</span> <span class="nav-text">路由器的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接真机设备"><span class="nav-number">2.1.</span> <span class="nav-text">连接真机设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件"><span class="nav-number">2.1.1.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件"><span class="nav-number">2.1.2.</span> <span class="nav-text">硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.1.3.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备模式"><span class="nav-number">2.2.</span> <span class="nav-text">设备模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模式切换"><span class="nav-number">2.2.1.</span> <span class="nav-text">模式切换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全设置"><span class="nav-number">2.3.</span> <span class="nav-text">安全设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-enable密码（用于保护特权模式）："><span class="nav-number">2.3.1.</span> <span class="nav-text">1.enable密码（用于保护特权模式）：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局模式下："><span class="nav-number">2.3.1.1.</span> <span class="nav-text">全局模式下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特权模式下："><span class="nav-number">2.3.1.2.</span> <span class="nav-text">特权模式下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看设备配置"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">查看设备配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-控制台密码（用于保护使用后门接入）"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.控制台密码（用于保护使用后门接入）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局模式下：-1"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">全局模式下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-远程登录密码（用于保护Telnet远程登录设备）"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.远程登录密码（用于保护Telnet远程登录设备）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器配置"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">路由器配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#全局模式下：-2"><span class="nav-number">2.3.3.1.1.</span> <span class="nav-text">全局模式下：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#电脑配置："><span class="nav-number">2.3.3.1.2.</span> <span class="nav-text">电脑配置：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试路由器和电脑连通性"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">测试路由器和电脑连通性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器远程登录开启"><span class="nav-number">2.3.3.3.</span> <span class="nav-text">路由器远程登录开启</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#全局模式下"><span class="nav-number">2.3.3.3.1.</span> <span class="nav-text">全局模式下</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络设备密码破解和恢复"><span class="nav-number">2.4.</span> <span class="nav-text">网络设备密码破解和恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器密码破解和恢复："><span class="nav-number">2.4.1.</span> <span class="nav-text">路由器密码破解和恢复：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交换机密码破解和恢复："><span class="nav-number">2.4.2.</span> <span class="nav-text">交换机密码破解和恢复：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -367,7 +401,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
