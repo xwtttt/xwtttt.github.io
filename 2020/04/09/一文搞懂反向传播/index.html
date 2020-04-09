@@ -20,15 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="随机波动">
-<meta property="og:url" content="http://yoursite.com/archives/2018/10/index.html">
+  <meta name="description" content="正向传播，反向传播">
+<meta property="og:type" content="article">
+<meta property="og:title" content="反向传播">
+<meta property="og:url" content="http://yoursite.com/2020/04/09/一文搞懂反向传播/index.html">
 <meta property="og:site_name" content="随机波动">
+<meta property="og:description" content="正向传播，反向传播">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-09T16:01:28.722Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="随机波动">
+<meta name="twitter:title" content="反向传播">
+<meta name="twitter:description" content="正向传播，反向传播">
 
-<link rel="canonical" href="http://yoursite.com/archives/2018/10/">
+<link rel="canonical" href="http://yoursite.com/2020/04/09/一文搞懂反向传播/">
 
 
 <script id="page-configurations">
@@ -36,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | 随机波动</title>
+  <title>反向传播 | 随机波动</title>
   
 
 
@@ -140,50 +144,89 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 10 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/09/一文搞懂反向传播/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="xwtttt">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="随机波动">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          反向传播
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-09 13:37:06" itemprop="dateCreated datePublished" datetime="2020-04-09T13:37:06+08:00">2020-04-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2018</span>
+        <p>正向传播，反向传播</p>
+<a id="more"></a>
+<h1 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h1><p> 在解释什么是反向传播之前，我们先来了解一下正向传播的过程：</p>
+<p>我们首先考虑一个两层的神经网络：</p>
+<script type="math/tex; mode=display">
+z^{(1)} = W^{(1)}x + b^{(1)}</script><p>其中 $w^{(1)}$ 为第一层的权重参数，$b^{(1)}$ 为第一层的偏差项，然后我们将它放入激活函数 $\phi$ 可以得到：</p>
+<script type="math/tex; mode=display">
+a^{(1)} =\phi (z^{(1)})</script><p>然后我们将他放入第二层神经网络：</p>
+<script type="math/tex; mode=display">
+z^{(2)} = w^{(2)}a^{(1)} + b^{(2)}</script><p>接着放入激活函数得到我们的预测结果：</p>
+<script type="math/tex; mode=display">
+y = \phi(z^{(2)})</script>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-10-30T13:00:00+08:00"
-              content="2018-10-30">
-          10-30
-        </time>
-      </div>
+      <footer class="post-footer">
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2018/10/30/cisco/网络课笔记1/" itemprop="url">
-            <span itemprop="name">计算机网络课笔记（1）</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/05/归一化和标准化/" rel="prev" title="标准化和归一化">
+      <i class="fa fa-chevron-left"></i> 标准化和归一化
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/09/过拟合/" rel="next" title="模型选择">
+      模型选择 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -236,6 +279,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#反向传播"><span class="nav-number">1.</span> <span class="nav-text">反向传播</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -328,6 +372,61 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

@@ -20,19 +20,21 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="介绍标准化和归一化">
+  <meta name="description" content="模型选择、过拟合和欠拟合 模型选择训练误差和泛化误差在了解过拟合和欠拟合之前我们收先了解一下什么是训练误差和泛化误差。 通俗来讲，训练误差就是模型在训练集上的误差，泛化误差就是模型在测试集上的误差。 当一个模型的参数越多，就代表它越复杂，经过训练集的训练就越容易拟合训练集上的数据，但是在测试集上不一定。这就好比是考试，一个记住了所有模拟考试答案的学生，再真正的高考中也不一定能取得很高的分数。  所">
 <meta property="og:type" content="article">
-<meta property="og:title" content="标准化和归一化">
-<meta property="og:url" content="http://yoursite.com/2020/04/05/归一化和标准化/index.html">
+<meta property="og:title" content="模型选择">
+<meta property="og:url" content="http://yoursite.com/2020/04/09/过拟合/index.html">
 <meta property="og:site_name" content="随机波动">
-<meta property="og:description" content="介绍标准化和归一化">
+<meta property="og:description" content="模型选择、过拟合和欠拟合 模型选择训练误差和泛化误差在了解过拟合和欠拟合之前我们收先了解一下什么是训练误差和泛化误差。 通俗来讲，训练误差就是模型在训练集上的误差，泛化误差就是模型在测试集上的误差。 当一个模型的参数越多，就代表它越复杂，经过训练集的训练就越容易拟合训练集上的数据，但是在测试集上不一定。这就好比是考试，一个记住了所有模拟考试答案的学生，再真正的高考中也不一定能取得很高的分数。  所">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-05T09:05:45.178Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/09/img/capacity_vs_error.svg">
+<meta property="og:updated_time" content="2020-04-09T16:01:25.053Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标准化和归一化">
-<meta name="twitter:description" content="介绍标准化和归一化">
+<meta name="twitter:title" content="模型选择">
+<meta name="twitter:description" content="模型选择、过拟合和欠拟合 模型选择训练误差和泛化误差在了解过拟合和欠拟合之前我们收先了解一下什么是训练误差和泛化误差。 通俗来讲，训练误差就是模型在训练集上的误差，泛化误差就是模型在测试集上的误差。 当一个模型的参数越多，就代表它越复杂，经过训练集的训练就越容易拟合训练集上的数据，但是在测试集上不一定。这就好比是考试，一个记住了所有模拟考试答案的学生，再真正的高考中也不一定能取得很高的分数。  所">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/09/img/capacity_vs_error.svg">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/05/归一化和标准化/">
+<link rel="canonical" href="http://yoursite.com/2020/04/09/过拟合/">
 
 
 <script id="page-configurations">
@@ -45,7 +47,7 @@
   };
 </script>
 
-  <title>标准化和归一化 | 随机波动</title>
+  <title>模型选择 | 随机波动</title>
   
 
 
@@ -151,7 +153,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/05/归一化和标准化/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/09/过拟合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +166,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          标准化和归一化
+          模型选择
         </h1>
 
         <div class="post-meta">
@@ -174,7 +176,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-04-05 14:52:03" itemprop="dateCreated datePublished" datetime="2020-04-05T14:52:03+08:00">2020-04-05</time>
+              <time title="创建时间：2020-04-09 17:18:28" itemprop="dateCreated datePublished" datetime="2020-04-09T17:18:28+08:00">2020-04-09</time>
             </span>
 
           
@@ -188,23 +190,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>介绍标准化和归一化</p>
-<a id="more"></a>
-<h1 id="标准化和归一化"><a href="#标准化和归一化" class="headerlink" title="标准化和归一化"></a>标准化和归一化</h1><p>在我们进行数据处理的时候，常常会碰到量纲或者数量级不同的数值。当各个指标之间相差很大的时候，直接使用原始数据进行分析会使得数值较高的指标对综合分析的影响较大，而数值较低的指标对综合分析的影响较小。</p>
-<p>假设一个房价预测模型，自变量为面积和房间数，因变量为房价：</p>
+        <p>模型选择、过拟合和欠拟合</p>
+<h1 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h1><h2 id="训练误差和泛化误差"><a href="#训练误差和泛化误差" class="headerlink" title="训练误差和泛化误差"></a>训练误差和泛化误差</h2><p>在了解过拟合和欠拟合之前我们收先了解一下什么是<strong>训练误差</strong>和<strong>泛化误差</strong>。</p>
+<p>通俗来讲，<strong>训练误差</strong>就是模型在训练集上的误差，<strong>泛化误差</strong>就是模型在测试集上的误差。</p>
+<p>当一个模型的参数越多，就代表它越复杂，经过训练集的训练就越容易拟合训练集上的数据，但是在测试集上不一定。这就好比是考试，一个记住了所有模拟考试答案的学生，再真正的高考中也不一定能取得很高的分数。</p>
+<p> 所以深度学习应该关注<strong>泛化误差</strong></p>
+<h3 id="K折交叉验证"><a href="#K折交叉验证" class="headerlink" title="K折交叉验证"></a>K折交叉验证</h3><p>在实际应用中，由于数据并不容易获取，测试数据极少用一次就丢弃。因此，实践中验证数据集和测试数据集的界限可能比较模糊。当训练数据不够用的时候，预留大量的验证数据显得十分奢侈，一种通常的做法是<strong>K折交叉验证</strong>。</p>
+<p>在 <strong>K 折交叉验证</strong>之中，我们将数据分成 <strong>K</strong> 个不同的子集，做 <strong>K</strong> 次模型训练和验证。每一次，我们使用一个子数据集验证模型，并且使用其他 <strong>K-1</strong> 个数据对模型进行训练。最后，我们对这 <strong>K</strong> 次训练误差和验证误差分别求平均。</p>
+<h1 id="过拟合和欠拟合"><a href="#过拟合和欠拟合" class="headerlink" title="过拟合和欠拟合"></a>过拟合和欠拟合</h1><p><strong>过拟合</strong>是指模型在训练集上的误差远小于在测试集上的误差。</p>
+<p><strong>欠拟合</strong>是指模型无法获得较小的训练误差。</p>
+<h2 id="模型复杂度"><a href="#模型复杂度" class="headerlink" title="模型复杂度"></a>模型复杂度</h2><p>模型复杂度是导致过拟合的原因之一。</p>
+<p>我们以 K 阶多项式拟合函数为例：</p>
 <script type="math/tex; mode=display">
-y = \theta_1x_1 + \theta_2x_2+b</script><p>其中 $x_1$ 代表房间数，$x_2$ 代表面积，那么在未进行标准化前，其实 $x_2$ 的变化对于数据的影响远远大于 $x_1$ </p>
-<p>因此我们要进行标准化，使数据落入一个小的特定区间，便于不同的单位或者量级的指标能够进行比较和加权。</p>
-<p>本文主要介绍两个方法：min-max 方法和 z-score 方法</p>
-<h2 id="规范化方法（min-max-方法）："><a href="#规范化方法（min-max-方法）：" class="headerlink" title="规范化方法（min-max 方法）："></a>规范化方法（min-max 方法）：</h2><p>对序列 $x_1, x_2, …, x_n$ 进行变换：</p>
+\hat{y} = b + \sum_{k=1}^K x^k w_k</script><p>其中 $w_k$ 是权重参数，$b$ 是偏差参数。（特别地，一阶多项式函数拟合又叫线性函数拟合。）</p>
+<p>由于高阶多项式函数模型的参数多，模型函数的选择空间更大，所以高阶多项式比低阶多项式的复杂程度高。</p>
+<p>复杂程度较高的模型会相对容易地在训练集上获得较小的误差，但是相应的也容易出现<strong>过拟合</strong>的现象。复杂程度较低的模型很难在训练集上取得较小的误差，会出现<strong>欠拟合</strong>的现象。应对欠拟合和过拟合的一个办法就是针对数据集选择合适复杂度的模型。</p>
+<p><img src="../img/capacity_vs_error.svg" alt="模型复杂度对欠拟合和过拟合的影响"></p>
+<h2 id="训练数据集大小"><a href="#训练数据集大小" class="headerlink" title="训练数据集大小"></a>训练数据集大小</h2><p>影响欠拟合和过拟合的另一个重要因素是训练数据集的大小。一般来说，如果训练数据集中样本数过少，特别是比模型参数数量（按元素计）更少时，过拟合更容易发生。此外，泛化误差不会随训练数据集里样本数量增加而增大。因此，在计算资源允许的范围之内，我们通常希望训练数据集大一些，特别是在模型复杂度较高时，例如层数较多的深度学习模型。</p>
+<h1 id="减小过拟合的方法"><a href="#减小过拟合的方法" class="headerlink" title="减小过拟合的方法"></a>减小过拟合的方法</h1><p>常见的减小过拟合的方法有<strong>权重衰减法</strong>，等价于<strong>$L2$范数正则化</strong>，通俗来讲就是添加一个<strong>$L2$范数惩罚项</strong>。</p>
+<p>我们先来介绍一下什么是<strong>$L2$范数正则化</strong>：<strong>$L2$范数正则化</strong>就是模型的权重参数的平方和与一个正的常数的乘积，以线性回归的损失函数为例：</p>
 <script type="math/tex; mode=display">
-y_i = \frac{X_i - X_{min}}{X_{max} - X_{min}}</script><p>这样得到的新序列 $y_1, y_2, …, y_n \in [0,1]$ 且无量纲</p>
-<h2 id="正规化方法（z-score-方法）："><a href="#正规化方法（z-score-方法）：" class="headerlink" title="正规化方法（z-score 方法）："></a>正规化方法（z-score 方法）：</h2><p>对序列 $x_1, x_2, …, x_n$ 进行变换：</p>
+\ell(w_1, w_2, b) = \frac{1}{n} \sum_{i=1}^n \frac{1}{2}\left(x_1^{(i)} w_1 + x_2^{(i)} w_2 + b - y^{(i)}\right)^2</script><p>其中$w_1, w_2$是权重参数，$b$是偏差参数，样本$i$的输入为$x_1^{(i)}, x_2^{(i)}$，标签为$y^{(i)}$，样本数为$n$。将权重参数用向量$\boldsymbol{w} = [w_1, w_2]$表示，带有$L_2$范数惩罚项的新损失函数为</p>
 <script type="math/tex; mode=display">
-y_i = \frac{x_i - \overline{x}}{s}</script><p>其中 $\overline{x}$ 为序列 $x$ 的平均值，$s$ 为序列 $x$ 的标准差：</p>
+\ell(w_1, w_2, b) + \frac{\lambda}{2n} \|\boldsymbol{w}\|^2</script><p>其中超参数$\lambda &gt; 0$。当权重参数均为0时，惩罚项最小。当$\lambda$较大时，惩罚项在损失函数中的比重较大，这通常会使学到的权重参数的元素较接近0。当$\lambda$设为0时，惩罚项完全不起作用。上式中$L_2$范数平方$|\boldsymbol{w}|^2$展开后得到$w_1^2 + w_2^2$。有了$L_2$范数惩罚项后，在小批量随机梯度下降中，我们可以将权重的迭代方式改为：</p>
 <script type="math/tex; mode=display">
-\overline{x} = \frac{1}{n}\sum_{i=1}^{n}xi</script><script type="math/tex; mode=display">
-s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\overline{x})^2}</script><p>于是生成的新序列 $y_1, y_2, …, y_n$ 的均值为 0，方差为 1，而且无量纲。</p>
+\begin{aligned}
+w_1 &\leftarrow \left(1- \frac{\eta\lambda}{|\mathcal{B}|} \right)w_1 -   \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}}x_1^{(i)} \left(x_1^{(i)} w_1 + x_2^{(i)} w_2 + b - y^{(i)}\right),\\
+w_2 &\leftarrow \left(1- \frac{\eta\lambda}{|\mathcal{B}|} \right)w_2 -   \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}}x_2^{(i)} \left(x_1^{(i)} w_1 + x_2^{(i)} w_2 + b - y^{(i)}\right).
+\end{aligned}</script><p>可见，$L_2$范数正则化令权重$w_1$和$w_2$先自乘小于1的数，再减去不含惩罚项的梯度。因此，$L_2$范数正则化又叫权重衰减。权重衰减通过惩罚绝对值较大的模型参数为需要学习的模型增加了限制，这可能对过拟合有效。实际场景中，我们有时也在惩罚项中添加偏差元素的平方和。</p>
 
     </div>
 
@@ -220,13 +233,10 @@ s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\overline{x})^2}</script><p>于是生�
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/05/线性回归实战-kaggle房价预测模型/" rel="prev" title="线性回归实战-kaggle房价预测模型">
-      <i class="fa fa-chevron-left"></i> 线性回归实战-kaggle房价预测模型
+    <a href="/2020/04/09/一文搞懂反向传播/" rel="prev" title="反向传播">
+      <i class="fa fa-chevron-left"></i> 反向传播
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/09/一文搞懂反向传播/" rel="next" title="反向传播">
-      反向传播 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -285,7 +295,7 @@ s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\overline{x})^2}</script><p>于是生�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#标准化和归一化"><span class="nav-number">1.</span> <span class="nav-text">标准化和归一化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#规范化方法（min-max-方法）："><span class="nav-number">1.1.</span> <span class="nav-text">规范化方法（min-max 方法）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规化方法（z-score-方法）："><span class="nav-number">1.2.</span> <span class="nav-text">正规化方法（z-score 方法）：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型选择"><span class="nav-number">1.</span> <span class="nav-text">模型选择</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练误差和泛化误差"><span class="nav-number">1.1.</span> <span class="nav-text">训练误差和泛化误差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#K折交叉验证"><span class="nav-number">1.1.1.</span> <span class="nav-text">K折交叉验证</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过拟合和欠拟合"><span class="nav-number">2.</span> <span class="nav-text">过拟合和欠拟合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型复杂度"><span class="nav-number">2.1.</span> <span class="nav-text">模型复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练数据集大小"><span class="nav-number">2.2.</span> <span class="nav-text">训练数据集大小</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减小过拟合的方法"><span class="nav-number">3.</span> <span class="nav-text">减小过拟合的方法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
