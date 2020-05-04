@@ -23,16 +23,16 @@
   <meta name="description" content="正向传播，反向传播">
 <meta property="og:type" content="article">
 <meta property="og:title" content="反向传播">
-<meta property="og:url" content="http://yoursite.com/2020/04/09/一文搞懂反向传播/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/04/09/反向传播/index.html">
 <meta property="og:site_name" content="随机波动">
 <meta property="og:description" content="正向传播，反向传播">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-09T16:01:28.722Z">
+<meta property="og:updated_time" content="2020-04-10T16:50:47.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反向传播">
 <meta name="twitter:description" content="正向传播，反向传播">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/09/一文搞懂反向传播/">
+<link rel="canonical" href="http://yoursite.com/2020/04/09/反向传播/">
 
 
 <script id="page-configurations">
@@ -151,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/09/一文搞懂反向传播/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/09/反向传播/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -190,16 +190,19 @@
       
         <p>正向传播，反向传播</p>
 <a id="more"></a>
-<h1 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h1><p> 在解释什么是反向传播之前，我们先来了解一下正向传播的过程：</p>
+<h1 id="反向传播简介"><a href="#反向传播简介" class="headerlink" title="反向传播简介"></a>反向传播简介</h1><h2 id="正向传播"><a href="#正向传播" class="headerlink" title="正向传播"></a>正向传播</h2><p>在解释什么是反向传播之前，我们先来了解一下正向传播的过程：</p>
 <p>我们首先考虑一个两层的神经网络：</p>
 <script type="math/tex; mode=display">
 z^{(1)} = W^{(1)}x + b^{(1)}</script><p>其中 $w^{(1)}$ 为第一层的权重参数，$b^{(1)}$ 为第一层的偏差项，然后我们将它放入激活函数 $\phi$ 可以得到：</p>
 <script type="math/tex; mode=display">
 a^{(1)} =\phi (z^{(1)})</script><p>然后我们将他放入第二层神经网络：</p>
 <script type="math/tex; mode=display">
-z^{(2)} = w^{(2)}a^{(1)} + b^{(2)}</script><p>接着放入激活函数得到我们的预测结果：</p>
+z^{(2)} = W^{(2)}a^{(1)} + b^{(2)}</script><p>接着放入激活函数得到我们的预测结果：</p>
 <script type="math/tex; mode=display">
-y = \phi(z^{(2)})</script>
+\hat{y} = \phi(z^{(2)})</script><p>假设损失函数为 $\ell$ ,且样本标签为 $y$ ,则可以计算出单个数据样本的损失项</p>
+<script type="math/tex; mode=display">
+L = \ell(\hat{y},y)</script><p>而我们的目标就是最小化这个损失函数。</p>
+<h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2>
     </div>
 
     
@@ -279,7 +282,7 @@ y = \phi(z^{(2)})</script>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#反向传播"><span class="nav-number">1.</span> <span class="nav-text">反向传播</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#反向传播简介"><span class="nav-number">1.</span> <span class="nav-text">反向传播简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正向传播"><span class="nav-number">1.1.</span> <span class="nav-text">正向传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反向传播"><span class="nav-number">1.2.</span> <span class="nav-text">反向传播</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

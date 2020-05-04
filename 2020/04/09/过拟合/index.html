@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="模型选择、过拟合和欠拟合 模型选择训练误差和泛化误差在了解过拟合和欠拟合之前我们收先了解一下什么是训练误差和泛化误差。 通俗来讲，训练误差就是模型在训练集上的误差，泛化误差就是模型在测试集上的误差。 当一个模型的参数越多，就代表它越复杂，经过训练集的训练就越容易拟合训练集上的数据，但是在测试集上不一定。这就好比是考试，一个记住了所有模拟考试答案的学生，再真正的高考中也不一定能取得很高的分数。  所">
+  <meta name="description" content="模型选择、过拟合和欠拟合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模型选择">
 <meta property="og:url" content="http://yoursite.com/2020/04/09/过拟合/index.html">
 <meta property="og:site_name" content="随机波动">
-<meta property="og:description" content="模型选择、过拟合和欠拟合 模型选择训练误差和泛化误差在了解过拟合和欠拟合之前我们收先了解一下什么是训练误差和泛化误差。 通俗来讲，训练误差就是模型在训练集上的误差，泛化误差就是模型在测试集上的误差。 当一个模型的参数越多，就代表它越复杂，经过训练集的训练就越容易拟合训练集上的数据，但是在测试集上不一定。这就好比是考试，一个记住了所有模拟考试答案的学生，再真正的高考中也不一定能取得很高的分数。  所">
+<meta property="og:description" content="模型选择、过拟合和欠拟合">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2020/04/09/img/capacity_vs_error.svg">
-<meta property="og:updated_time" content="2020-04-09T16:01:25.053Z">
+<meta property="og:updated_time" content="2020-05-04T13:06:11.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模型选择">
-<meta name="twitter:description" content="模型选择、过拟合和欠拟合 模型选择训练误差和泛化误差在了解过拟合和欠拟合之前我们收先了解一下什么是训练误差和泛化误差。 通俗来讲，训练误差就是模型在训练集上的误差，泛化误差就是模型在测试集上的误差。 当一个模型的参数越多，就代表它越复杂，经过训练集的训练就越容易拟合训练集上的数据，但是在测试集上不一定。这就好比是考试，一个记住了所有模拟考试答案的学生，再真正的高考中也不一定能取得很高的分数。  所">
+<meta name="twitter:description" content="模型选择、过拟合和欠拟合">
 <meta name="twitter:image" content="http://yoursite.com/2020/04/09/img/capacity_vs_error.svg">
 
 <link rel="canonical" href="http://yoursite.com/2020/04/09/过拟合/">
@@ -191,6 +191,7 @@
 
       
         <p>模型选择、过拟合和欠拟合</p>
+<a id="more"></a>
 <h1 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h1><h2 id="训练误差和泛化误差"><a href="#训练误差和泛化误差" class="headerlink" title="训练误差和泛化误差"></a>训练误差和泛化误差</h2><p>在了解过拟合和欠拟合之前我们收先了解一下什么是<strong>训练误差</strong>和<strong>泛化误差</strong>。</p>
 <p>通俗来讲，<strong>训练误差</strong>就是模型在训练集上的误差，<strong>泛化误差</strong>就是模型在测试集上的误差。</p>
 <p>当一个模型的参数越多，就代表它越复杂，经过训练集的训练就越容易拟合训练集上的数据，但是在测试集上不一定。这就好比是考试，一个记住了所有模拟考试答案的学生，再真正的高考中也不一定能取得很高的分数。</p>
@@ -233,7 +234,7 @@ w_2 &\leftarrow \left(1- \frac{\eta\lambda}{|\mathcal{B}|} \right)w_2 -   \frac{
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/09/一文搞懂反向传播/" rel="prev" title="反向传播">
+    <a href="/2020/04/09/反向传播/" rel="prev" title="反向传播">
       <i class="fa fa-chevron-left"></i> 反向传播
     </a></div>
       <div class="post-nav-item"></div>
