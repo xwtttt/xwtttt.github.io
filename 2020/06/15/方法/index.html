@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="方法方法定义123456789101112访问修饰符  返回值类型  方法名（参数1，参数2，……）&amp;#123;	//这里编写方法的主体（功能实现的过程）	return 返回值;（如果没有返回值，则不需要写该语句）&amp;#125;//例如：public string GetStudent()&amp;#123;	string info = string.Format(&amp;quot;姓名：&amp;#123;1&amp;#125">
+<meta property="og:type" content="article">
+<meta property="og:title" content="方法">
+<meta property="og:url" content="http://yoursite.com/2020/06/15/方法/index.html">
+<meta property="og:site_name" content="随机波动">
+<meta property="og:description" content="方法方法定义123456789101112访问修饰符  返回值类型  方法名（参数1，参数2，……）&amp;#123;	//这里编写方法的主体（功能实现的过程）	return 返回值;（如果没有返回值，则不需要写该语句）&amp;#125;//例如：public string GetStudent()&amp;#123;	string info = string.Format(&amp;quot;姓名：&amp;#123;1&amp;#125">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-06-18T07:25:20.891Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="方法">
+<meta name="twitter:description" content="方法方法定义123456789101112访问修饰符  返回值类型  方法名（参数1，参数2，……）&amp;#123;	//这里编写方法的主体（功能实现的过程）	return 返回值;（如果没有返回值，则不需要写该语句）&amp;#125;//例如：public string GetStudent()&amp;#123;	string info = string.Format(&amp;quot;姓名：&amp;#123;1&amp;#125">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/15/方法/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>方法 | 随机波动</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="随机波动" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">随机波动</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/15/方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="xwtttt">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="随机波动">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          方法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-15 14:52:03" itemprop="dateCreated datePublished" datetime="2020-06-15T14:52:03+08:00">2020-06-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="方法定义"><a href="#方法定义" class="headerlink" title="方法定义"></a>方法定义</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">访问修饰符  返回值类型  方法名（参数1，参数2，……）</span><br><span class="line">&#123;</span><br><span class="line">	//这里编写方法的主体（功能实现的过程）</span><br><span class="line">	return 返回值;（如果没有返回值，则不需要写该语句）</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//例如：</span><br><span class="line">public string GetStudent()</span><br><span class="line">&#123;</span><br><span class="line">	string info = string.Format(&quot;姓名：&#123;1&#125;，学号：&#123;2&#125;，年龄：&#123;3&#125;&quot;,stuName,stuId,stuAge);</span><br><span class="line">	return info;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>访问修饰符：可以省略，默认 <strong>private</strong> ，可以根据需要定义成 <strong>public</strong> </li>
+<li>方法名：一般是“动词”或者“动宾短语”，采用 Pascal ，首字母大写</li>
+<li>参数列表：根据需要添加，也可以省略。参数列表要求以 <strong>类型 参数名</strong> 的形式，使用逗号分隔，首字母一般不大写</li>
+<li>有返回值：使用 <strong>return</strong> 返回，<strong>return</strong>语句后面不能再有其他语句</li>
+<li>没有返回值：如果不反回任何数据，使用 <strong>void</strong> 表示</li>
+</ul>
+<h2 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h2><h3 id="调用规范"><a href="#调用规范" class="headerlink" title="调用规范"></a>调用规范</h3><p>通过<code>对象名.方法名（参数1，参数2，……）</code>进行调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//例如：</span><br><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">	Student obj1 = new Student();</span><br><span class="line">	//调用有参的方法，并接收返回值</span><br><span class="line">	string info = obj1.GetStudentInfo(&quot;小明&quot;,1002,Convet.ToDateTime(&quot;1998-04-17&quot;));</span><br><span class="line">	</span><br><span class="line">	Student obj2 = new Student();</span><br><span class="line">	obj2.StudentName = &quot;小张&quot;;</span><br><span class="line">	obj2.StudentId = 1003;</span><br><span class="line">	obj2.Birthday = Convert.ToDateTime(&quot;1998-04-18&quot;);</span><br><span class="line">	//调用无参构造方法现实学生信息，没有返回值</span><br><span class="line">	obj2.ShowStudentInfo();</span><br><span class="line">	Console.ReadLine();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="变量的分类及其作用域"><a href="#变量的分类及其作用域" class="headerlink" title="变量的分类及其作用域"></a>变量的分类及其作用域</h3><ul>
+<li>在方法的内部定义的变量叫做“局部变量”，只能在该方法内部使用</li>
+<li>在方法外部，类的内部定义的变量，称为“成员变量”，也叫“字段”，可以在类的内部或者外部使用（很少在外部使用）</li>
+</ul>
+<h2 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h2><p>当一个类中有<strong>重名的方法</strong>，但是方法的<strong>参数个数或者类型不同</strong>时，会根据不同的<strong>参数个数或者类型</strong>动态地调用不同的方法</p>
+<h3 id="方法重载的好处"><a href="#方法重载的好处" class="headerlink" title="方法重载的好处"></a>方法重载的好处</h3><ol>
+<li>减少类的对外接口（只显示一个方法），降低类的复杂度</li>
+<li>便于用户使用（相同功能的方法名称一样）和识别<h3 id="方法重载的条件"><a href="#方法重载的条件" class="headerlink" title="方法重载的条件"></a>方法重载的条件</h3></li>
+<li>方法的名称必须一样</li>
+<li>方法的参数个数或者类型不一样 </li>
+<li>方法重载与返回值无关 </li>
+</ol>
+<h3 id="静态方法及重载"><a href="#静态方法及重载" class="headerlink" title="静态方法及重载"></a>静态方法及重载</h3><ul>
+<li><p>关键词<code>static</code>的使用</p>
+<ul>
+<li>关键词可以修饰类、方法、成员变量，修饰后我们称之为：静态类、静态方法、静态字段</li>
+</ul>
+</li>
+<li>静态方法的调用：<code>类名.方法名</code></li>
+<li>使用示例：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static int Add(int a, int b, int c)</span><br><span class="line">&#123;</span><br><span class="line">	return a+b+c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">	int res2 = Calculator.Add(10,20,30);</span><br><span class="line">	Console.WriteLine(res2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="静态成员使用经验"><a href="#静态成员使用经验" class="headerlink" title="静态成员使用经验"></a>静态成员使用经验</h3><ul>
+<li>静态成员在程序运行时被调入内存中，并且在系统未关闭之前不会被回收</li>
+<li>类的成员使用非常频繁时，可以考虑使用<code>static</code>修饰，但是不要使用过多</li>
+<li>静态成员不能直接调用实例成员（静态方法不能直接调用实例方法）<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2>构造方法在使用时要求和<strong>类名</strong>一致<br>当没有写构造方法的时候，会自动生成<strong>无参构造方法</strong><h3 id="有参数的构造方法"><a href="#有参数的构造方法" class="headerlink" title="有参数的构造方法"></a>有参数的构造方法</h3></li>
+<li>参数的类型和顺序同样需要和定义一致</li>
+<li>有参数的构造方法可以让用户轻松选择使用何种方式完成<strong>对象的初始化</strong>工作</li>
+<li>使用有参数的构造方法能有效避免单个初始化对象属性的麻烦</li>
+<li>如果相约束用户创建对象时<strong>必须完成某些属性的初始化工作</strong>，则可以去掉无参构造方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Student</span><br><span class="line">&#123;</span><br><span class="line">	//无参构造方法</span><br><span class="line">	//在对象初始化的时候两个属性已经有值了</span><br><span class="line">	public Student()</span><br><span class="line">	&#123;</span><br><span class="line">		this.StudentId = 10001;</span><br><span class="line">		this.StudentName = &quot;小明&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	//有参的构造方法（构造方法的重载）</span><br><span class="line">	public Student(int stuId, string stuName)</span><br><span class="line">	&#123;</span><br><span class="line">		this.StudentId = stuId;</span><br><span class="line">		this.StudentName = stuName;</span><br><span class="line">	&#125;</span><br><span class="line">	public int StudentId &#123;get; set;&#125;</span><br><span class="line">	public string StudentName &#123;get; set;&#125;</span><br><span class="line">	public int Age &#123;get; set;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="构造方法和实例方法"><a href="#构造方法和实例方法" class="headerlink" title="构造方法和实例方法"></a>构造方法和实例方法</h2><h3 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h3><ul>
+<li>用于对象的初始化，一个类中至少有一个构造方法</li>
+<li>不能显示调用，只能在创建对象时，使用<code>new</code>来调用</li>
+<li>构造方法不能有返回值</li>
+<li>构造方法必须和类名一致<h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3></li>
+<li>用于表示对象能够干什么，一个类中<strong>可以没有</strong>任何实例方法</li>
+<li>只能显示调用<code>对象名.方法名</code></li>
+<li>可以有返回值，没有时必须使用<code>void</code>表示</li>
+<li>方法命名要有意义，一般是<code>动词+名词</code>的形式，不能与类名相同，命名规范通常使用 Pascal 命名法<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a><code>this</code>关键字</h2></li>
+<li>当成员变量和局部变量重名时使用<code>this</code>区分</li>
+<li><code>this</code>表示当前类的<strong>对象</strong>，用于访问该类的<strong>成员变量</strong>或者<strong>方法</strong></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/09/过拟合/" rel="prev" title="模型选择">
+      <i class="fa fa-chevron-left"></i> 模型选择
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/16/对象/" rel="next" title="对象">
+      对象 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方法"><span class="nav-number">1.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法定义"><span class="nav-number">1.1.</span> <span class="nav-text">方法定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">1.1.1.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法调用"><span class="nav-number">1.2.</span> <span class="nav-text">方法调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用规范"><span class="nav-number">1.2.1.</span> <span class="nav-text">调用规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量的分类及其作用域"><span class="nav-number">1.2.2.</span> <span class="nav-text">变量的分类及其作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法重载"><span class="nav-number">1.3.</span> <span class="nav-text">方法重载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法重载的好处"><span class="nav-number">1.3.1.</span> <span class="nav-text">方法重载的好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法重载的条件"><span class="nav-number">1.3.2.</span> <span class="nav-text">方法重载的条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态方法及重载"><span class="nav-number">1.3.3.</span> <span class="nav-text">静态方法及重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态成员使用经验"><span class="nav-number">1.3.4.</span> <span class="nav-text">静态成员使用经验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造方法"><span class="nav-number">1.4.</span> <span class="nav-text">构造方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有参数的构造方法"><span class="nav-number">1.4.1.</span> <span class="nav-text">有参数的构造方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造方法和实例方法"><span class="nav-number">1.5.</span> <span class="nav-text">构造方法和实例方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造方法-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例方法"><span class="nav-number">1.5.2.</span> <span class="nav-text">实例方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this关键字"><span class="nav-number">1.6.</span> <span class="nav-text">this关键字</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">xwtttt</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xwtttt</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
